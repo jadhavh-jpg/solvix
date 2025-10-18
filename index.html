@@ -16,88 +16,183 @@
       50% { filter: drop-shadow(0 0 12px #e67e22); }
       100% { filter: drop-shadow(0 0 2px #e67e22); }
     }
-    .glow {
-      animation: glow 2s ease-in-out infinite;
-    }
+    .glow { animation: glow 2s ease-in-out infinite; }
   </style>
 </head>
 <body class="text-gray-800 leading-relaxed">
   <!-- Navbar -->
-  <header class="py-5 px-6 md:px-12 flex items-center justify-between bg-white shadow">
-    <a href="#" class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-xl bg-[#e67e22] flex items-center justify-center font-bold text-white">S</div>
+  <header class="py-6 px-6 md:px-12 flex items-center justify-between bg-white shadow">
+    <a href="#" class="flex items-center gap-4">
+      <img src="/mnt/data/slogo.png" alt="Solvix logo" class="w-16 h-16 rounded-full object-contain">
       <div class="hidden md:block">
-        <h1 class="text-xl font-semibold text-gray-900">Solvix</h1>
+        <h1 class="text-2xl font-semibold text-gray-900">Solvix</h1>
         <p class="text-sm text-gray-500">Digital Products & Branding</p>
       </div>
     </a>
-    <nav class="hidden md:flex items-center gap-6 text-gray-600">
+    <nav class="hidden md:flex items-center gap-8 text-gray-600">
       <a href="#services" class="hover:text-gray-900">Services</a>
       <a href="#work" class="hover:text-gray-900">Work</a>
       <a href="#about" class="hover:text-gray-900">About</a>
+      <a href="#testimonials" class="hover:text-gray-900">Testimonials</a>
       <a href="#contact" class="hover:text-gray-900">Contact</a>
-      <a href="#contact" class="ml-2 px-4 py-2 rounded-lg btn-accent">Get a Quote</a>
+      <a href="#contact" class="ml-2 px-4 py-3 rounded-lg btn-accent">Get a Quote</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="px-6 md:px-12 py-12 grid md:grid-cols-2 gap-10 items-center">
+  <section class="px-6 md:px-12 py-16 grid md:grid-cols-2 gap-12 items-center">
     <div>
-      <h2 class="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">We create modern websites that build brands.</h2>
-      <p class="mt-4 text-gray-600 max-w-xl">At Solvix, we design and develop responsive websites, smart digital campaigns, and data-driven branding solutions for your business growth.</p>
-      <div class="mt-6 flex gap-4">
-        <a href="#contact" class="px-6 py-3 rounded-lg btn-accent font-semibold shadow">Start a Project</a>
-        <a href="#services" class="px-6 py-3 rounded-lg border border-gray-300 hover:bg-gray-100">Our Services</a>
+      <h2 class="text-5xl md:text-6xl font-extrabold leading-tight text-gray-900">We create modern websites that build brands.</h2>
+      <p class="mt-6 text-gray-600 text-lg max-w-2xl">At Solvix, we design and develop responsive websites, smart digital campaigns, and data-driven branding solutions that convert visitors into customers. From startups to established brands — we deliver results.</p>
+      <div class="mt-8 flex gap-5">
+        <a href="#contact" class="px-6 py-4 rounded-lg btn-accent font-semibold shadow">Start a Project</a>
+        <a href="#services" class="px-6 py-4 rounded-lg border border-gray-300 hover:bg-gray-100">Our Services</a>
+      </div>
+      <div class="mt-8 flex gap-6 text-sm text-gray-600">
+        <div>
+          <p class="font-semibold">Clients</p>
+          <p class="text-xl">100+</p>
+        </div>
+        <div>
+          <p class="font-semibold">Years</p>
+          <p class="text-xl">6+</p>
+        </div>
+        <div>
+          <p class="font-semibold">Success Rate</p>
+          <p class="text-xl">98%</p>
+        </div>
       </div>
     </div>
 
     <div class="relative">
-      <div class="rounded-2xl overflow-hidden shadow-xl">
-        <img src="/mnt/data/vsdc-screenshot 2025-10-18 18-05-38-643.jpeg" alt="Indian woman working on laptop" class="w-full h-[340px] object-cover">
+      <div class="rounded-3xl overflow-hidden shadow-2xl">
+        <img src="/mnt/data/vsdc-screenshot 2025-10-18 18-05-38-643.jpeg" alt="Indian woman working on laptop" class="w-full h-[420px] object-cover">
       </div>
     </div>
   </section>
 
   <!-- Services -->
-  <section id="services" class="px-6 md:px-12 py-12 bg-white">
-    <h3 class="text-2xl font-bold text-gray-900">Our Services</h3>
-    <p class="text-gray-500 mt-2 max-w-2xl">We deliver complete digital solutions that empower your business to grow online.</p>
+  <section id="services" class="px-6 md:px-12 py-14 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-3xl font-bold text-gray-900">Our Services</h3>
+      <p class="text-gray-500 mt-2 max-w-2xl">We deliver complete digital solutions that empower your business to grow online.</p>
 
-    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="p-6 rounded-xl bg-[#fff8f2] shadow-sm">
-        <h4 class="font-semibold text-gray-900">Web Development</h4>
-        <p class="mt-2 text-sm text-gray-600">Responsive and fast websites with CMS and e-commerce integration.</p>
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 rounded-xl bg-[#fff8f2] shadow-sm">
+          <h4 class="font-semibold text-gray-900">Web Development</h4>
+          <p class="mt-3 text-sm text-gray-600">Responsive and fast websites with CMS and e-commerce integration.</p>
+        </div>
+        <div class="p-8 rounded-xl bg-[#fff8f2] shadow-sm">
+          <h4 class="font-semibold text-gray-900">Social Media Marketing</h4>
+          <p class="mt-3 text-sm text-gray-600">Creative campaigns and ad strategies for Facebook, Instagram, and more.</p>
+        </div>
+        <div class="p-8 rounded-xl bg-[#fff8f2] shadow-sm">
+          <h4 class="font-semibold text-gray-900">Branding & Design</h4>
+          <p class="mt-3 text-sm text-gray-600">Logo, identity, and digital branding for your next-level presence.</p>
+        </div>
       </div>
-      <div class="p-6 rounded-xl bg-[#fff8f2] shadow-sm">
-        <h4 class="font-semibold text-gray-900">Social Media Marketing</h4>
-        <p class="mt-2 text-sm text-gray-600">Creative campaigns and ad strategies for Facebook, Instagram, and more.</p>
-      </div>
-      <div class="p-6 rounded-xl bg-[#fff8f2] shadow-sm">
-        <h4 class="font-semibold text-gray-900">Branding & Design</h4>
-        <p class="mt-2 text-sm text-gray-600">Logo, identity, and digital branding for your next-level presence.</p>
+
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 rounded-xl bg-[#fff8f2] shadow-sm">
+          <h4 class="font-semibold text-gray-900">Software Bundle</h4>
+          <p class="mt-3 text-sm text-gray-600">Pre-packaged tools for operations, CRM and automation.</p>
+        </div>
+        <div class="p-8 rounded-xl bg-[#fff8f2] shadow-sm">
+          <h4 class="font-semibold text-gray-900">Bulk SMS Services</h4>
+          <p class="mt-3 text-sm text-gray-600">Reliable transactional and promotional SMS at scale.</p>
+        </div>
+        <div class="p-8 rounded-xl bg-[#fff8f2] shadow-sm">
+          <h4 class="font-semibold text-gray-900">CRO & Analytics</h4>
+          <p class="mt-3 text-sm text-gray-600">Conversion optimization, A/B testing and analytics setup.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="px-6 md:px-12 py-12">
-    <div class="max-w-3xl">
-      <h3 class="text-2xl font-bold text-gray-900">About Solvix</h3>
-      <p class="mt-3 text-gray-600">Solvix is a digital creative studio focused on helping brands grow through technology and design. Our goal is to craft seamless digital experiences and scalable platforms.</p>
+  <!-- Process -->
+  <section id="process" class="px-6 md:px-12 py-12">
+    <div class="max-w-6xl mx-auto text-center">
+      <h3 class="text-2xl font-bold text-gray-900">Our Process</h3>
+      <p class="text-gray-600 mt-2">Simple, transparent and outcome-oriented workflow.</p>
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="p-6 bg-white rounded-lg shadow-sm">
+          <h4 class="font-semibold">Discover</h4>
+          <p class="mt-2 text-sm text-gray-600">Understand goals and users.</p>
+        </div>
+        <div class="p-6 bg-white rounded-lg shadow-sm">
+          <h4 class="font-semibold">Design</h4>
+          <p class="mt-2 text-sm text-gray-600">Wireframes and visual design.</p>
+        </div>
+        <div class="p-6 bg-white rounded-lg shadow-sm">
+          <h4 class="font-semibold">Build</h4>
+          <p class="mt-2 text-sm text-gray-600">Fast development and testing.</p>
+        </div>
+        <div class="p-6 bg-white rounded-lg shadow-sm">
+          <h4 class="font-semibold">Grow</h4>
+          <p class="mt-2 text-sm text-gray-600">Measure, optimize and scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="px-6 md:px-12 py-12 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-3xl font-bold text-gray-900">What our clients say</h3>
+      <p class="text-gray-600 mt-2">Real feedback from real customers.</p>
+
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl bg-[#fff8f2] shadow-sm">
+          <p class="text-gray-700">“Solvix redesigned our website and increased conversion by 70%. Highly recommended!”</p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=80&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" class="w-10 h-10 rounded-full object-cover">
+            <div>
+              <p class="font-semibold">Ritu Sharma</p>
+              <p class="text-xs text-gray-600">Founder, Bloom Crafts</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl bg-[#fff8f2] shadow-sm">
+          <p class="text-gray-700">“Their social campaigns gave us measurable ROAS. Good team to work with.”</p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1545996124-1d9b3e0f1d3a?q=80&w=80&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" class="w-10 h-10 rounded-full object-cover">
+            <div>
+              <p class="font-semibold">Amit Verma</p>
+              <p class="text-xs text-gray-600">Marketing Head, UrbanShop</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl bg-[#fff8f2] shadow-sm">
+          <p class="text-gray-700">“Professional team, quick turnaround and strong communication.”</p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1545996124-1d9b3e0f1d3a?q=80&w=80&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" class="w-10 h-10 rounded-full object-cover">
+            <div>
+              <p class="font-semibold">Neha Kapoor</p>
+              <p class="text-xs text-gray-600">COO, FitStore</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="px-6 md:px-12 py-12 bg-[#fff8f2]">
-    <div class="max-w-3xl">
+    <div class="max-w-3xl mx-auto">
       <h3 class="text-2xl font-bold text-gray-900">Contact Us</h3>
       <p class="text-gray-600 mt-2">We’d love to hear from you. Share your project details, and our team will get in touch.</p>
 
       <form class="mt-6 grid grid-cols-1 gap-4" onsubmit="handleForm(event)">
         <input name="name" placeholder="Your name" class="p-3 rounded-lg border border-gray-300" required>
         <input name="email" type="email" placeholder="Email" class="p-3 rounded-lg border border-gray-300" required>
+        <input name="company" placeholder="Company (optional)" class="p-3 rounded-lg border border-gray-300">
         <textarea name="message" rows="5" placeholder="Your message" class="p-3 rounded-lg border border-gray-300" required></textarea>
-        <button type="submit" class="px-6 py-3 rounded-lg btn-accent font-semibold">Send Message</button>
+        <div class="flex gap-3">
+          <button type="submit" class="px-6 py-3 rounded-lg btn-accent font-semibold">Send Message</button>
+          <a href="mailto:jadhav.h@gmail.com" class="px-6 py-3 rounded-lg border border-gray-300">Email Us</a>
+        </div>
         <p id="formMsg" class="text-sm text-gray-500"></p>
       </form>
 
@@ -115,10 +210,10 @@
       <p>© <span id="year"></span> Solvix — All rights reserved.</p>
       <div class="flex items-center gap-6">
         <div class="glow">
-          <img src="/mnt/data/logo.png" alt="Kasturi Divine logo" class="w-14 h-14 object-contain">
+          <img src="/mnt/data/logo.png" alt="Kasturi Divine logo" class="w-16 h-16 object-contain">
         </div>
         <div class="glow">
-          <img src="/mnt/data/HARILOGO.png" alt="Numerology with Hari logo" class="w-14 h-14 object-contain">
+          <img src="/mnt/data/HARILOGO.png" alt="Numerology with Hari logo" class="w-16 h-16 object-contain">
         </div>
       </div>
     </div>
