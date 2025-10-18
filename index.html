@@ -2,153 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SOLVIX — Grow Your Business</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solvix — Digital Solutions</title>
+  <meta name="description" content="Solvix — Web, Branding & Digital Growth" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root{
-      --bg:#fbfcfd;
-      --hero:#071a2b;
-      --accent:#0ea5ff;
-      --purple:#7c3aed;
-      --muted:#5b6b78;
-      --card:#ffffff;
-      --radius:14px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    body { background-color: #faf7f2; }
+    .accent { color: #e67e22; }
+    .btn-accent { background-color: #e67e22; color: white; }
+    .btn-accent:hover { opacity: 0.9; }
+    @keyframes glow {
+      0% { filter: drop-shadow(0 0 2px #e67e22); }
+      50% { filter: drop-shadow(0 0 12px #e67e22); }
+      100% { filter: drop-shadow(0 0 2px #e67e22); }
     }
-    *{box-sizing:border-box}
-    body{margin:0; background:var(--bg); color:#071428; -webkit-font-smoothing:antialiased;}
-    .container{max-width:1100px; margin:36px auto; padding:24px; display:grid; grid-template-columns: 1fr 380px; gap:24px; align-items:start;}
-    @media(max-width:920px){ .container{grid-template-columns:1fr} }
-
-    /* header */
-    header{display:flex; align-items:center; gap:12px; margin-bottom:8px}
-    .logo{width:120px; height:48px; object-fit:contain}
-    .brand-title{font-weight:800; letter-spacing:1px}
-    nav{margin-left:auto; display:flex; gap:10px; align-items:center}
-    nav a{color:var(--muted); text-decoration:none; font-weight:600}
-
-    /* hero */
-    .hero{background: linear-gradient(180deg,#ffffff 0%, #f6f9fb 100%); padding:28px; border-radius:var(--radius); box-shadow:0 8px 28px rgba(12,24,40,0.06);}
-    .headline{font-size:44px; margin:0 0 10px; color:#071428; line-height:1;}
-    @media(max-width:480px){ .headline{font-size:32px} }
-    .lead{color:var(--muted); margin:0 0 18px; max-width:640px}
-
-    .cta-row{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:10px; background:linear-gradient(90deg,var(--accent),var(--purple)); color:white; text-decoration:none; font-weight:700}
-    .mailto{color:var(--hero); font-weight:700; text-decoration:none}
-
-    /* features grid */
-    .features{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:18px}
-    .card{background:var(--card); border-radius:12px; padding:12px; border:1px solid rgba(7,26,43,0.04)}
-    .card h4{margin:0 0 6px; font-size:14px}
-    .card p{margin:0; color:var(--muted); font-size:13px}
-
-    /* right column */
-    .side{background:#071a2b; color:white; padding:22px; border-radius:var(--radius); min-height:340px; display:flex; flex-direction:column; justify-content:flex-start; gap:14px;}
-    .side h3{margin:0; font-size:20px}
-    .service{display:flex; gap:12px; align-items:center; padding:10px 0; border-bottom:1px dashed rgba(255,255,255,0.04)}
-    .icon{width:44px; height:44px; border-radius:10px; display:grid; place-items:center; background:linear-gradient(180deg, rgba(14,165,255,0.12), rgba(124,58,237,0.08)); color:white; font-weight:700}
-    .service p{margin:4px 0 0 0; color:#b9d9ea; font-size:13px}
-
-    .contact-row{display:flex; flex-direction:column; gap:6px; margin-top:auto}
-    .contact-row a{color:#9bd8f0; text-decoration:none; font-weight:700}
-    .loc{display:flex; gap:8px; align-items:center; color:#bfeeff; font-weight:700}
-
-    footer{grid-column:1 / -1; margin-top:18px; text-align:center; color:var(--muted); font-size:13px}
+    .glow {
+      animation: glow 2s ease-in-out infinite;
+    }
   </style>
 </head>
-<body>
-  <div class="container">
+<body class="text-gray-800 leading-relaxed">
+  <!-- Navbar -->
+  <header class="py-5 px-6 md:px-12 flex items-center justify-between bg-white shadow">
+    <a href="#" class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-[#e67e22] flex items-center justify-center font-bold text-white">S</div>
+      <div class="hidden md:block">
+        <h1 class="text-xl font-semibold text-gray-900">Solvix</h1>
+        <p class="text-sm text-gray-500">Digital Products & Branding</p>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-gray-600">
+      <a href="#services" class="hover:text-gray-900">Services</a>
+      <a href="#work" class="hover:text-gray-900">Work</a>
+      <a href="#about" class="hover:text-gray-900">About</a>
+      <a href="#contact" class="hover:text-gray-900">Contact</a>
+      <a href="#contact" class="ml-2 px-4 py-2 rounded-lg btn-accent">Get a Quote</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="px-6 md:px-12 py-12 grid md:grid-cols-2 gap-10 items-center">
     <div>
-      <header>
-        <img class="logo" src="logos.jpg" alt="SOLVIX logo">
-        <div>
-          <div class="brand-title">SOLVIX</div>
-          <div style="font-size:12px;color:var(--muted)">Brand development • Tech • Growth</div>
-        </div>
-
-        <nav>
-          <a href="#services">Services</a>
-          <a href="#work">Work</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </header>
-
-      <main class="hero" role="main">
-        <h1 class="headline">GROW YOUR BUSINESS</h1>
-        <p class="lead">We create futuristic brand experiences and scale digital-first companies with product-led marketing, web engineering and creative systems.</p>
-
-        <div class="cta-row">
-          <a class="btn" href="tel:+919300594567">📞 +91 9300594567</a>
-          <a class="mailto" href="mailto:jadhav.h@gmail.com">✉ jadhav.h@gmail.com</a>
-          <a style="margin-left:auto; font-size:13px; color:var(--muted)" href="#services">See Services →</a>
-        </div>
-
-        <div class="features" aria-hidden="false">
-          <div class="card">
-            <h4>Fast MVP Websites</h4>
-            <p>Modern, responsive & performance-first.</p>
-          </div>
-          <div class="card">
-            <h4>Creative Systems</h4>
-            <p>Design systems & motion for scale.</p>
-          </div>
-          <div class="card">
-            <h4>Growth Marketing</h4>
-            <p>Paid & organic strategies that convert.</p>
-          </div>
-          <div class="card">
-            <h4>Analytics & Ops</h4>
-            <p>Data-driven decisions and automation.</p>
-          </div>
-        </div>
-      </main>
+      <h2 class="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">We create modern websites that build brands.</h2>
+      <p class="mt-4 text-gray-600 max-w-xl">At Solvix, we design and develop responsive websites, smart digital campaigns, and data-driven branding solutions for your business growth.</p>
+      <div class="mt-6 flex gap-4">
+        <a href="#contact" class="px-6 py-3 rounded-lg btn-accent font-semibold shadow">Start a Project</a>
+        <a href="#services" class="px-6 py-3 rounded-lg border border-gray-300 hover:bg-gray-100">Our Services</a>
+      </div>
     </div>
 
-    <aside class="side" id="services">
-      <h3>Our Services</h3>
+    <div class="relative">
+      <div class="rounded-2xl overflow-hidden shadow-xl">
+        <img src="/mnt/data/vsdc-screenshot 2025-10-18 18-05-38-643.jpeg" alt="Indian woman working on laptop" class="w-full h-[340px] object-cover">
+      </div>
+    </div>
+  </section>
 
-      <div class="service">
-        <div class="icon">{"</>"}</div>
-        <div>
-          <strong>Web Development</strong>
-          <p>Modern web apps, PWAs & landing pages.</p>
+  <!-- Services -->
+  <section id="services" class="px-6 md:px-12 py-12 bg-white">
+    <h3 class="text-2xl font-bold text-gray-900">Our Services</h3>
+    <p class="text-gray-500 mt-2 max-w-2xl">We deliver complete digital solutions that empower your business to grow online.</p>
+
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-xl bg-[#fff8f2] shadow-sm">
+        <h4 class="font-semibold text-gray-900">Web Development</h4>
+        <p class="mt-2 text-sm text-gray-600">Responsive and fast websites with CMS and e-commerce integration.</p>
+      </div>
+      <div class="p-6 rounded-xl bg-[#fff8f2] shadow-sm">
+        <h4 class="font-semibold text-gray-900">Social Media Marketing</h4>
+        <p class="mt-2 text-sm text-gray-600">Creative campaigns and ad strategies for Facebook, Instagram, and more.</p>
+      </div>
+      <div class="p-6 rounded-xl bg-[#fff8f2] shadow-sm">
+        <h4 class="font-semibold text-gray-900">Branding & Design</h4>
+        <p class="mt-2 text-sm text-gray-600">Logo, identity, and digital branding for your next-level presence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="px-6 md:px-12 py-12">
+    <div class="max-w-3xl">
+      <h3 class="text-2xl font-bold text-gray-900">About Solvix</h3>
+      <p class="mt-3 text-gray-600">Solvix is a digital creative studio focused on helping brands grow through technology and design. Our goal is to craft seamless digital experiences and scalable platforms.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="px-6 md:px-12 py-12 bg-[#fff8f2]">
+    <div class="max-w-3xl">
+      <h3 class="text-2xl font-bold text-gray-900">Contact Us</h3>
+      <p class="text-gray-600 mt-2">We’d love to hear from you. Share your project details, and our team will get in touch.</p>
+
+      <form class="mt-6 grid grid-cols-1 gap-4" onsubmit="handleForm(event)">
+        <input name="name" placeholder="Your name" class="p-3 rounded-lg border border-gray-300" required>
+        <input name="email" type="email" placeholder="Email" class="p-3 rounded-lg border border-gray-300" required>
+        <textarea name="message" rows="5" placeholder="Your message" class="p-3 rounded-lg border border-gray-300" required></textarea>
+        <button type="submit" class="px-6 py-3 rounded-lg btn-accent font-semibold">Send Message</button>
+        <p id="formMsg" class="text-sm text-gray-500"></p>
+      </form>
+
+      <div class="mt-6 text-gray-700">
+        <p><strong>Address:</strong> Pune, India</p>
+        <p><strong>Phone:</strong> 9300594567</p>
+        <p><strong>Email:</strong> jadhav.h@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="px-6 md:px-12 py-8 text-gray-600 text-sm bg-white border-t border-gray-200">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Solvix — All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <div class="glow">
+          <img src="/mnt/data/logo.png" alt="Kasturi Divine logo" class="w-14 h-14 object-contain">
+        </div>
+        <div class="glow">
+          <img src="/mnt/data/HARILOGO.png" alt="Numerology with Hari logo" class="w-14 h-14 object-contain">
         </div>
       </div>
+    </div>
+  </footer>
 
-      <div class="service">
-        <div class="icon">⇄</div>
-        <div>
-          <strong>Social Media Marketing</strong>
-          <p>Creative campaigns & organic growth.</p>
-        </div>
-      </div>
-
-      <div class="service">
-        <div class="icon">💡</div>
-        <div>
-          <strong>Creative Graphics</strong>
-          <p>Branding, motion & ad creatives.</p>
-        </div>
-      </div>
-
-      <div class="service">
-        <div class="icon">⚙️</div>
-        <div>
-          <strong>Software Bundle</strong>
-          <p>Hand-picked tools & SaaS packs for teams.</p>
-        </div>
-      </div>
-
-      <div style="margin-top:14px" class="contact-row" id="contact">
-        <div class="loc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-right:6px"><path d="M12 21s7-4.35 7-10a7 7 0 10-14 0c0 5.65 7 10 7 10z" stroke="#0ea5ff" stroke-width="1.2" fill="none"/></svg>Pune</div>
-        <a href="tel:+919300594567">+91 9300594567</a>
-        <a href="mailto:jadhav.h@gmail.com">jadhav.h@gmail.com</a>
-        <a href="https://www.solvix.com" target="_blank" rel="noopener">www.solvix.com</a>
-      </div>
-    </aside>
-
-    <footer>Ready to scale? Get a free audit and roadmap for your brand. • SOLVIX</footer>
-  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function handleForm(e){
+      e.preventDefault();
+      const form = e.target;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+      const mailto = `mailto:jadhav.h@gmail.com?subject=${encodeURIComponent('New inquiry from '+name)}&body=${encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\n'+message)}`;
+      window.location.href = mailto;
+      document.getElementById('formMsg').textContent = 'Opening your email client — or send to jadhav.h@gmail.com';
+      form.reset();
+    }
+  </script>
 </body>
 </html>
