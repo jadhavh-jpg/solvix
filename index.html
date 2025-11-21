@@ -14,8 +14,8 @@
       transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s ease;
     }
     .cinematic:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 30px 60px rgba(12, 18, 28, 0.14);
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 20px 45px rgba(12, 18, 28, 0.12);
     }
     .card-shadow {
       box-shadow: 0 10px 30px rgba(12,18,28,0.06);
@@ -23,24 +23,28 @@
     /* subtle fade-in */
     .fade-up { animation: fadeUp .9s ease both; }
     @keyframes fadeUp { from {opacity:0; transform:translateY(14px);} to {opacity:1; transform:none;} }
+
+    /* small helper for focus */
+    .focus-ring:focus { outline: none; box-shadow: 0 0 0 4px rgba(99,102,241,0.08); border-color: rgb(99,102,241); }
   </style>
 </head>
 <body class="bg-white text-slate-900 antialiased">
 
-  <div class="max-w-7xl mx-auto px-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- Header -->
     <header class="flex items-center justify-between py-5">
       <div class="flex items-center gap-4">
-        <img src="sl.jpg" alt="Solvix Logo" class="h-12 w-auto">
+        <!-- Single larger logo -->
+        <img src="/images/partner1.svg" alt="Solvix Logo" class="h-14 w-auto rounded-md object-contain">
 
-        <div>
-          <img src="sl.jpg" alt="Solvix Logo" class="h-12 w-auto">
-
+        <div class="hidden sm:block">
+          <div class="text-lg font-semibold">Solvix</div>
           <div class="text-xs text-slate-500">Digital Startup Agency</div>
         </div>
       </div>
 
+      <!-- Desktop nav -->
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-700">
         <a href="#home" class="hover:text-indigo-600">HOME</a>
         <a href="#about" class="hover:text-indigo-600">ABOUT</a>
@@ -50,18 +54,33 @@
         <a href="#contact" class="hover:text-indigo-600">CONTACT US</a>
       </nav>
 
+      <!-- Mobile actions -->
       <div class="flex items-center gap-3">
         <a href="#contact" class="hidden md:inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-semibold cinematic">Get Free Consultation</a>
-        <button class="md:hidden p-2 rounded-md bg-slate-100" aria-label="menu">
+
+        <!-- hamburger -->
+        <button id="mobileToggle" class="md:hidden p-2 rounded-md bg-slate-100" aria-label="menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-700"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>
         </button>
       </div>
     </header>
 
+    <!-- Mobile nav panel (hidden by default) -->
+    <nav id="mobileNav" class="md:hidden hidden mb-6">
+      <div class="bg-white rounded-lg p-4 shadow-sm space-y-2">
+        <a href="#home" class="block py-2">HOME</a>
+        <a href="#about" class="block py-2">ABOUT</a>
+        <a href="#products" class="block py-2">PRODUCT</a>
+        <a href="#gallery" class="block py-2">GALLERY</a>
+        <a href="#blog" class="block py-2">BLOG</a>
+        <a href="#contact" class="block py-2">CONTACT US</a>
+      </div>
+    </nav>
+
     <!-- HERO -->
     <main id="home" class="grid md:grid-cols-2 gap-10 items-center py-8">
       <div class="fade-up">
-        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">We build digital products & growth systems that <span class="text-indigo-600">help startups scale</span></h1>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">We build digital products & growth systems that <span class="text-indigo-600">help startups scale</span></h1>
         <p class="mt-4 text-slate-600">Solvix designs fast landing pages, brand identities and marketing funnels built for conversion. Launch faster, measure better and grow predictably.</p>
 
         <div class="mt-6 flex gap-4">
@@ -91,8 +110,13 @@
 
       <div class="fade-up">
         <div class="rounded-2xl overflow-hidden card-shadow">
-          <!-- using uploaded banner image (local path) -->
-          <img src="/12.png" alt="Services banner" class="w-full h-72 object-cover">
+          <!-- Responsive hero image using picture + srcset -->
+          <picture>
+            <source media="(min-width:1024px)" srcset="/images/hero-desktop-1400.jpg">
+            <source media="(min-width:640px)" srcset="/images/hero-tablet-900.jpg">
+            <img src="/images/hero-mobile-600.jpg" alt="Services banner" class="w-full h-[320px] sm:h-[420px] md:h-[520px] lg:h-[560px] object-cover">
+          </picture>
+
           <div class="p-6 bg-white">
             <h3 class="text-lg font-semibold">Launch. Scale. Dominate.</h3>
             <p class="mt-2 text-sm text-slate-600">Complete digital systems: websites, branding, ad funnels & automations.</p>
@@ -106,23 +130,23 @@
       <h2 class="text-2xl font-bold">Our Services</h2>
       <p class="text-slate-600 mt-2">Startup-specific services designed to help you launch and grow.</p>
 
-      <!-- poster/banner visual -->
+      <!-- poster/banner visual (responsive) -->
       <div class="mt-6 flex justify-center">
-       <img src="12.png" 
-     alt="Services Poster" 
-     class="max-w-xl rounded-xl card-shadow">
-
+        <picture>
+          <source media="(min-width:1024px)" srcset="/images/services-poster-1200.jpg">
+          <img src="/images/services-poster-1200.jpg" alt="Services Poster" class="max-w-xl rounded-xl card-shadow object-cover">
+        </picture>
       </div>
 
       <!-- interactive tab + quick cards -->
       <div class="mt-8 grid md:grid-cols-3 gap-6 items-start">
         <div class="space-y-3">
-          <button data-key="web" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic">🌐 Website Development</button>
-          <button data-key="brand" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic">🎨 Branding</button>
-          <button data-key="marketing" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic">📣 Digital Marketing</button>
-          <button data-key="uiux" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic">🧭 UI/UX Design</button>
-          <button data-key="motion" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic">🎬 Motion & Video</button>
-          <button data-key="automation" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic">🤖 Automation</button>
+          <button data-key="web" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic focus-ring">🌐 Website Development</button>
+          <button data-key="brand" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic focus-ring">🎨 Branding</button>
+          <button data-key="marketing" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic focus-ring">📣 Digital Marketing</button>
+          <button data-key="uiux" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic focus-ring">🧭 UI/UX Design</button>
+          <button data-key="motion" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic focus-ring">🎬 Motion & Video</button>
+          <button data-key="automation" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic focus-ring">🤖 Automation</button>
         </div>
 
         <div class="md:col-span-2">
@@ -163,7 +187,7 @@
       <div class="mt-6 grid sm:grid-cols-2 gap-6">
         <blockquote class="p-6 bg-white rounded-lg card-shadow">
           <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center font-semibold">A</div>
+            <img src="/images/case1.jpg" alt="Anita" class="w-12 h-12 rounded-full object-cover">
             <div>
               <div class="font-semibold">Anita Sharma</div>
               <div class="text-xs text-slate-500">Founder, EduStart</div>
@@ -174,7 +198,7 @@
 
         <blockquote class="p-6 bg-white rounded-lg card-shadow">
           <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center font-semibold">R</div>
+            <img src="/images/case2.jpg" alt="Rohit" class="w-12 h-12 rounded-full object-cover">
             <div>
               <div class="font-semibold">Rohit Patel</div>
               <div class="text-xs text-slate-500">Founder, Foodify</div>
@@ -253,9 +277,9 @@
     <section id="gallery" class="mt-12">
       <h2 class="text-2xl font-bold">Clients / Partners</h2>
       <div class="mt-6 flex flex-wrap gap-6 items-center">
-        <img src="/mnt/data/services available at.png" alt="partner1" class="h-12 grayscale opacity-80 rounded" />
-        <img src="/mnt/data/services available at.png" alt="partner2" class="h-12 grayscale opacity-80 rounded" />
-        <img src="/mnt/data/services available at.png" alt="partner3" class="h-12 grayscale opacity-80 rounded" />
+        <img src="/images/partner1.svg" alt="partner1" class="h-12 grayscale opacity-90 rounded" />
+        <img src="/images/partner2.svg" alt="partner2" class="h-12 grayscale opacity-90 rounded" />
+        <img src="/images/partner3.svg" alt="partner3" class="h-12 grayscale opacity-90 rounded" />
       </div>
     </section>
 
@@ -266,25 +290,28 @@
         <p class="text-slate-600 mt-2">Book a free consultation or send a message — we will respond within 24 hours.</p>
 
         <div class="mt-6 grid gap-6 sm:grid-cols-2">
-          <form class="space-y-4">
+          <!-- Improved form: required fields, accessible labels, success toast -->
+          <form id="contactForm" class="space-y-4" onsubmit="handleSubmit(event)" novalidate>
             <div>
               <label class="text-sm">Full name</label>
-              <input class="mt-2 w-full rounded-md border px-3 py-2 text-sm" placeholder="Your name" />
+              <input name="name" required class="mt-2 w-full rounded-md border px-3 py-3 text-sm focus-ring" placeholder="Your name" />
             </div>
             <div>
               <label class="text-sm">Email</label>
-              <input class="mt-2 w-full rounded-md border px-3 py-2 text-sm" placeholder="you@company.com" />
+              <input name="email" type="email" required class="mt-2 w-full rounded-md border px-3 py-3 text-sm focus-ring" placeholder="you@company.com" />
             </div>
             <div>
               <label class="text-sm">Phone / WhatsApp</label>
-              <input class="mt-2 w-full rounded-md border px-3 py-2 text-sm" placeholder="+91 9XXXXXXXXX" />
+              <input name="phone" required class="mt-2 w-full rounded-md border px-3 py-3 text-sm focus-ring" placeholder="+91 9XXXXXXXXX" />
             </div>
             <div>
               <label class="text-sm">Message</label>
-              <textarea class="mt-2 w-full rounded-md border px-3 py-2 text-sm" rows="4" placeholder="Tell us about your project"></textarea>
+              <textarea name="message" required class="mt-2 w-full rounded-md border px-3 py-3 text-sm focus-ring" rows="5" placeholder="Tell us about your project"></textarea>
             </div>
-            <div>
-              <button type="button" class="px-5 py-3 bg-indigo-600 text-white rounded-md cinematic">Send Message</button>
+
+            <div class="flex items-center gap-3">
+              <button type="submit" id="sendBtn" class="px-5 py-3 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white rounded-md shadow-md cinematic">Send Message</button>
+              <div id="formStatus" class="text-sm text-green-600 hidden">Message sent — thank you!</div>
             </div>
           </form>
 
@@ -324,7 +351,7 @@
 
   </div>
 
-  <!-- Minimal JS for tabbed service content (keeps page static-friendly) -->
+  <!-- Minimal JS for tabbed service content + mobile nav + form handling -->
   <script>
     (function(){
       const data = {
@@ -361,7 +388,47 @@
       // init
       render('web');
       document.querySelector('.tab-btn[data-key="web"]').classList.add('ring-2','ring-indigo-200');
+
+      // mobile menu toggle
+      const mobileBtn = document.getElementById('mobileToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      if (mobileBtn && mobileNav) {
+        mobileBtn.addEventListener('click', () => {
+          mobileNav.classList.toggle('hidden');
+        });
+      }
     })();
+
+    // Form handling (UI-first). Replace setTimeout simulation with real POST to your endpoint when ready.
+    function handleSubmit(e){
+      e.preventDefault();
+      const btn = document.getElementById('sendBtn');
+      const status = document.getElementById('formStatus');
+
+      // simple client-side validation
+      const form = e.target;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const phone = form.phone.value.trim();
+      const message = form.message.value.trim();
+
+      if (!name || !email || !phone || !message) {
+        alert('Please fill all fields.');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      // Simulate send — replace with fetch() to your API/Netlify/Formspree endpoint
+      setTimeout(()=> {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+        status.classList.remove('hidden');
+        form.reset();
+        setTimeout(()=> status.classList.add('hidden'), 5000);
+      }, 900);
+    }
   </script>
 
 </body>
