@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Website Development | Solvix</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --dark:#233D4D;
+  --orange:#FE7F2D;
+  --yellow:#FCCA46;
+  --green:#A1C181;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --card:#f7f9fb;
+  --radius:18px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui,sans-serif}
+body{background:#fff;color:var(--text);line-height:1.65}
+
+/* HEADER (same as home, path adjusted) */
+header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 8%;
+  border-bottom:1px solid rgba(35,61,77,.12);
+}
+header img{height:46px}
+
+nav a{
+  margin-left:26px;
+  text-decoration:none;
+  color:var(--dark);
+  font-weight:500;
+}
+nav a:hover{color:var(--orange)}
+
+/* HERO */
+.hero{
+  padding:100px 8%;
+  background:linear-gradient(120deg,var(--dark),var(--orange));
+  color:#fff;
+}
+.hero h1{font-size:46px;margin-bottom:14px}
+.hero p{font-size:18px;opacity:.95}
+
+/* CONTENT */
+section{padding:90px 8%}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
+.card{
+  background:var(--card);
+  padding:34px;
+  border-radius:var(--radius);
+}
+.card h3{margin-bottom:10px}
+
+/* CTA */
+.cta{
+  background:linear-gradient(120deg,var(--dark),#1b2f3b);
+  color:#fff;
+  text-align:center;
+  padding:80px 8%;
+}
+.cta a{
+  display:inline-block;
+  margin-top:20px;
+  padding:16px 36px;
+  background:var(--yellow);
+  color:#000;
+  font-weight:600;
+  border-radius:999px;
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+  background:#0f1f29;
+  color:#cbd5e1;
+  padding:40px 8%;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="../assets/solvixl.png" alt="Solvix">
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#services">Services</a>
+    <a href="../gallery.html">Gallery</a>
+    <a href="../contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Website Development</h1>
+  <p>Fast, scalable and conversion-focused websites built for growth.</p>
+</section>
+
+<section>
+  <div class="grid">
+    <div class="card">
+      <h3>What We Build</h3>
+      <p>Business websites, landing pages, portfolios and custom solutions.</p>
+    </div>
+    <div class="card">
+      <h3>Our Approach</h3>
+      <p>Clear strategy → clean UI → performance-first development.</p>
+    </div>
+    <div class="card">
+      <h3>Technology</h3>
+      <p>HTML, CSS, JS, SEO-ready and scalable structure.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Need a Website That Works?</h2>
+  <a href="../contact.html">Talk to Solvix</a>
+</section>
+
+<footer>
+  © 2025 Solvix. All rights reserved.
+</footer>
+
+</body>
+</html>
