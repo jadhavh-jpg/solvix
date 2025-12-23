@@ -6,18 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+/* ================= BRAND PALETTE ================= */
 :root{
-  :root{
   --bg:#ffffff;
-  --dark:#00487C;
-  --text:#1f2937;
-  --muted:#3E6680;
-  --card:#f4f8fb;
+  --primary:#00487C;
+  --primary-soft:#3E6680;
   --accent:#0496FF;
   --accent-soft:#4BB3FD;
+  --text:#1f2937;
+  --muted:#4b5563;
+  --card:#f4f8fb;
   --radius:18px;
-}
-
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui,sans-serif}
@@ -26,78 +25,83 @@ body{background:var(--bg);color:var(--text);line-height:1.6}
 /* ================= HEADER ================= */
 header{
   display:flex;align-items:center;justify-content:space-between;
-  padding:22px 8%;position:relative;
+  padding:20px 8%;
+  background:#fff;
+  border-bottom:1px solid rgba(4,150,255,.15);
+  position:relative;
 }
 header img{height:44px}
 
-/* NAV */
 .nav{display:flex;align-items:center}
-.nav a, .dropbtn{
-  margin-left:28px;
+.nav a,.dropbtn{
+  margin-left:26px;
   text-decoration:none;
-  color:#333;
+  color:#1f2937;
   font-weight:500;
   background:none;border:none;cursor:pointer;
 }
 
-/* Active menu */
-.nav a.active, .dropbtn.active{
+.nav a.active,.dropbtn.active{
   color:var(--accent);
   font-weight:600;
 }
 
-/* DROPDOWN */
+/* Dropdown */
 .dropdown{position:relative}
 .dropdown-content{
-  position:absolute;top:42px;left:0;
+  position:absolute;top:40px;left:0;
   background:#fff;
   min-width:240px;
-  border-radius:12px;
-  box-shadow:0 15px 35px rgba(0,0,0,.12);
+  border-radius:14px;
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
   display:none;flex-direction:column;
   padding:12px 0;z-index:1000;
 }
 .dropdown-content a{
   padding:12px 22px;
-  font-size:14px;color:#222;
+  font-size:14px;color:#1f2937;
 }
-.dropdown-content a:hover{background:#f1f5ff}
+.dropdown-content a:hover{background:#eef6ff}
 .dropdown:hover .dropdown-content{display:flex}
 
-/* HAMBURGER */
-.hamburger{
-  display:none;
-  flex-direction:column;
-  cursor:pointer;
-}
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;cursor:pointer}
 .hamburger span{
-  height:3px;width:26px;background:#222;
+  height:3px;width:26px;background:#1f2937;
   margin:4px 0;border-radius:3px;
 }
 
 /* ================= HERO ================= */
 .hero{
-  position:relative;height:90vh;overflow:hidden;
-  display:flex;align-items:center;
+  position:relative;height:90vh;
+  display:flex;align-items:center;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(
+    120deg,
+    rgba(0,72,124,.92),
+    rgba(4,150,255,.85)
+  );
 }
 .hero video{
   position:absolute;inset:0;width:100%;height:100%;
   object-fit:cover;z-index:-1;
 }
-.hero::after{
-  content:"";position:absolute;inset:0;
-  background:rgba(0,0,0,.55);
-}
 .hero-content{
-  max-width:700px;padding-left:8%;
-  color:#fff;z-index:1
+  max-width:720px;
+  padding-left:8%;
+  color:#fff;
+  z-index:1;
 }
-.hero h1{font-size:54px;line-height:1.1;margin-bottom:18px}
-.hero p{font-size:18px;opacity:.9;margin-bottom:28px}
+.hero h1{font-size:56px;line-height:1.1;margin-bottom:18px}
+.hero p{font-size:18px;opacity:.95;margin-bottom:28px}
 .hero .btn{
-  display:inline-block;padding:14px 28px;
-  background:#fff;color:#000;
-  border-radius:999px;font-weight:600;
+  display:inline-block;
+  padding:14px 30px;
+  border-radius:999px;
+  background:linear-gradient(120deg,var(--accent),var(--accent-soft));
+  color:#fff;font-weight:600;
   text-decoration:none;
 }
 
@@ -107,7 +111,7 @@ section{padding:90px 8%}
 .section-title h2{font-size:38px;margin-bottom:10px}
 .section-title p{color:var(--muted)}
 
-/* SERVICES */
+/* Services */
 .services{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -118,83 +122,63 @@ section{padding:90px 8%}
   padding:34px;border-radius:var(--radius);
   transition:.3s;
 }
-.card:hover{transform:translateY(-6px)}
-.card h3{margin-bottom:10px}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(4,150,255,.18);
+}
 
-/* ================= CLIENTS ================= */
-.clients-section{
-  background:linear-gradient(120deg,#f9fafc,#eef3ff);
+/* Clients */
+.clients{
+  background:linear-gradient(120deg,#f6fbff,#eaf4ff);
 }
-.clients-slider{
-  overflow:hidden;
-}
-.slider-track{
+.slider{
   display:flex;gap:30px;
-  animation:scrollClients 25s linear infinite;
+  animation:scroll 22s linear infinite;
 }
-.logo-box{
+.logo{
   min-width:180px;height:110px;
   background:#fff;border-radius:18px;
   display:flex;align-items:center;justify-content:center;
   box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
-.logo-box img{max-width:120px;max-height:60px}
-
-@keyframes scrollClients{
+.logo img{max-width:120px;max-height:60px}
+@keyframes scroll{
   0%{transform:translateX(0)}
   100%{transform:translateX(-50%)}
 }
 
-/* ================= TESTIMONIALS ================= */
-/* Card hover accent */
-.card:hover{
-  box-shadow:0 14px 40px rgba(4,150,255,.18);
+/* Testimonials */
+.testimonials{
+  background:linear-gradient(120deg,#ffffff,#f0f7ff);
 }
-
-/* Links hover */
-a:hover{
-  color:#0496FF;
-}
-
 .testimonial-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:28px;
 }
-.testimonial-card{
+.testimonial{
   background:#fff;padding:34px;
   border-radius:18px;
   box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
-.testimonial-card h4{margin-top:14px;color:var(--accent)}
+.testimonial h4{margin-top:14px;color:var(--accent)}
 
-/* ================= CTA ================= */
+/* CTA */
 .cta{
-  background:linear-gradient(120deg,#0e0e11,#1a1a22);
+  background:linear-gradient(120deg,var(--primary),var(--primary-soft));
   color:#fff;text-align:center;
-  padding:70px 8%;
 }
 .cta a{
-  display:inline-block;margin:0 10px;
-  padding:14px 26px;border-radius:999px;
-  background:#fff;color:#000;font-weight:600;
-  text-decoration:none;
+  display:inline-block;margin-top:20px;
+  padding:14px 30px;border-radius:999px;
+  background:#fff;color:var(--primary);
+  font-weight:600;text-decoration:none;
 }
 
-/* ================= FOOTER ================= */
+/* Footer */
 footer{
   background:#0b0b0e;color:#d1d1d1;
-  padding:70px 8% 30px;
-}
-.footer-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:40px;
-}
-.footer-bottom{
-  border-top:1px solid #222;
-  margin-top:40px;padding-top:20px;
-  font-size:13px;text-align:center;
+  padding:40px 8%;text-align:center;
 }
 
 /* ================= MOBILE ================= */
@@ -205,7 +189,7 @@ footer{
     width:100%;background:#fff;
     flex-direction:column;display:none;
     padding:20px 0;
-    box-shadow:0 15px 30px rgba(0,0,0,.1);
+    box-shadow:0 15px 30px rgba(0,0,0,.12);
   }
   .nav.active{display:flex}
   .dropdown-content{position:static;box-shadow:none}
@@ -216,7 +200,6 @@ footer{
 
 <body>
 
-<!-- HEADER -->
 <header>
   <img src="assets/solvixl.png" alt="Solvix">
 
@@ -225,7 +208,7 @@ footer{
   </div>
 
   <nav class="nav" id="navMenu">
-    <a href="index.html">Home</a>
+    <a href="index.html" class="active">Home</a>
 
     <div class="dropdown">
       <button class="dropbtn">Services ▾</button>
@@ -244,7 +227,6 @@ footer{
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <video autoplay muted loop playsinline>
     <source src="assets/hero.mp4" type="video/mp4">
@@ -256,65 +238,56 @@ footer{
   </div>
 </section>
 
-<!-- SERVICES -->
 <section>
   <div class="section-title">
     <h2>What We Do</h2>
     <p>Practical services designed for growth</p>
   </div>
   <div class="services">
-    <div class="card"><h3>Website Development</h3></div>
-    <div class="card"><h3>Digital Marketing</h3></div>
-    <div class="card"><h3>Motion Ads & Videos</h3></div>
-    <div class="card"><h3>Graphic Design</h3></div>
-    <div class="card"><h3>Logo & Brand Design</h3></div>
-    <div class="card"><h3>UI / UX Design</h3></div>
+    <div class="card">Website Development</div>
+    <div class="card">Digital Marketing</div>
+    <div class="card">Motion Ads & Video</div>
+    <div class="card">Graphic Design</div>
+    <div class="card">Logo & Brand Design</div>
+    <div class="card">UI / UX Design</div>
   </div>
 </section>
 
-<!-- CLIENTS -->
-<section class="clients-section">
-  <div class="slider-track">
-    <div class="logo-box"><img src="assets/client1.png"></div>
-    <div class="logo-box"><img src="assets/client2.png"></div>
-    <div class="logo-box"><img src="assets/client3.png"></div>
-    <div class="logo-box"><img src="assets/client4.png"></div>
-    <div class="logo-box"><img src="assets/client5.png"></div>
+<section class="clients">
+  <div class="slider">
+    <div class="logo"><img src="assets/client1.png"></div>
+    <div class="logo"><img src="assets/client2.png"></div>
+    <div class="logo"><img src="assets/client3.png"></div>
+    <div class="logo"><img src="assets/client4.png"></div>
+    <div class="logo"><img src="assets/client5.png"></div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section class="testimonials">
   <div class="section-title">
     <h2>What Clients Say</h2>
-    <p>Real feedback from real people</p>
   </div>
   <div class="testimonial-grid">
-    <div class="testimonial-card">
+    <div class="testimonial">
       <p>“Clear thinking and solid execution.”</p>
       <h4>— Business Owner</h4>
     </div>
-    <div class="testimonial-card">
+    <div class="testimonial">
       <p>“Professional, honest, and reliable.”</p>
       <h4>— Startup Founder</h4>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta">
   <h2>Let’s Build Something That Matters</h2>
   <a href="contact.html">Get Started</a>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-bottom">
-    © 2025 Solvix. All rights reserved.
-  </div>
+  © 2025 Solvix. All rights reserved.
 </footer>
 
-<!-- JS -->
 <script>
 const hamburger=document.getElementById("hamburger");
 const navMenu=document.getElementById("navMenu");
