@@ -1,432 +1,314 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Solvix — Digital Startup Agency</title>
+<meta charset="UTF-8">
+<title>Solvix – Digital Solutions That Work</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root{
+  --bg:#ffffff;
+  --dark:#0e0e11;
+  --text:#2b2b2b;
+  --muted:#6b6b6b;
+  --card:#f6f7f9;
+  --accent:#2563eb;
+  --radius:18px;
+}
 
-  <style>
-    /* small custom styles for cinematic hover and shadows */
-    .cinematic {
-      transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s ease;
-    }
-    .cinematic:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 20px 45px rgba(12, 18, 28, 0.12);
-    }
-    .card-shadow {
-      box-shadow: 0 10px 30px rgba(12,18,28,0.06);
-    }
-    /* subtle fade-in */
-    .fade-up { animation: fadeUp .9s ease both; }
-    @keyframes fadeUp { from {opacity:0; transform:translateY(14px);} to {opacity:1; transform:none;} }
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui,sans-serif}
+body{background:var(--bg);color:var(--text);line-height:1.6}
 
-    /* small helper for focus */
-    .focus-ring:focus { outline: none; box-shadow: 0 0 0 4px rgba(99,102,241,0.08); border-color: rgb(99,102,241); }
-  </style>
+/* ================= HEADER ================= */
+header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 8%;position:relative;
+}
+header img{height:44px}
+
+/* NAV */
+.nav{display:flex;align-items:center}
+.nav a, .dropbtn{
+  margin-left:28px;
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+  background:none;border:none;cursor:pointer;
+}
+
+/* Active menu */
+.nav a.active, .dropbtn.active{
+  color:var(--accent);
+  font-weight:600;
+}
+
+/* DROPDOWN */
+.dropdown{position:relative}
+.dropdown-content{
+  position:absolute;top:42px;left:0;
+  background:#fff;
+  min-width:240px;
+  border-radius:12px;
+  box-shadow:0 15px 35px rgba(0,0,0,.12);
+  display:none;flex-direction:column;
+  padding:12px 0;z-index:1000;
+}
+.dropdown-content a{
+  padding:12px 22px;
+  font-size:14px;color:#222;
+}
+.dropdown-content a:hover{background:#f1f5ff}
+.dropdown:hover .dropdown-content{display:flex}
+
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+}
+.hamburger span{
+  height:3px;width:26px;background:#222;
+  margin:4px 0;border-radius:3px;
+}
+
+/* ================= HERO ================= */
+.hero{
+  position:relative;height:90vh;overflow:hidden;
+  display:flex;align-items:center;
+}
+.hero video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;z-index:-1;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:rgba(0,0,0,.55);
+}
+.hero-content{
+  max-width:700px;padding-left:8%;
+  color:#fff;z-index:1
+}
+.hero h1{font-size:54px;line-height:1.1;margin-bottom:18px}
+.hero p{font-size:18px;opacity:.9;margin-bottom:28px}
+.hero .btn{
+  display:inline-block;padding:14px 28px;
+  background:#fff;color:#000;
+  border-radius:999px;font-weight:600;
+  text-decoration:none;
+}
+
+/* ================= SECTIONS ================= */
+section{padding:90px 8%}
+.section-title{text-align:center;margin-bottom:60px}
+.section-title h2{font-size:38px;margin-bottom:10px}
+.section-title p{color:var(--muted)}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
+.card{
+  background:var(--card);
+  padding:34px;border-radius:var(--radius);
+  transition:.3s;
+}
+.card:hover{transform:translateY(-6px)}
+.card h3{margin-bottom:10px}
+
+/* ================= CLIENTS ================= */
+.clients-section{
+  background:linear-gradient(120deg,#f9fafc,#eef3ff);
+}
+.clients-slider{
+  overflow:hidden;
+}
+.slider-track{
+  display:flex;gap:30px;
+  animation:scrollClients 25s linear infinite;
+}
+.logo-box{
+  min-width:180px;height:110px;
+  background:#fff;border-radius:18px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+.logo-box img{max-width:120px;max-height:60px}
+
+@keyframes scrollClients{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
+/* ================= TESTIMONIALS ================= */
+.testimonials{
+  background:linear-gradient(120deg,#fff,#f3f6ff);
+}
+.testimonial-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
+.testimonial-card{
+  background:#fff;padding:34px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+.testimonial-card h4{margin-top:14px;color:var(--accent)}
+
+/* ================= CTA ================= */
+.cta{
+  background:linear-gradient(120deg,#0e0e11,#1a1a22);
+  color:#fff;text-align:center;
+  padding:70px 8%;
+}
+.cta a{
+  display:inline-block;margin:0 10px;
+  padding:14px 26px;border-radius:999px;
+  background:#fff;color:#000;font-weight:600;
+  text-decoration:none;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#0b0b0e;color:#d1d1d1;
+  padding:70px 8% 30px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+}
+.footer-bottom{
+  border-top:1px solid #222;
+  margin-top:40px;padding-top:20px;
+  font-size:13px;text-align:center;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  .hamburger{display:flex}
+  .nav{
+    position:absolute;top:80px;left:0;
+    width:100%;background:#fff;
+    flex-direction:column;display:none;
+    padding:20px 0;
+    box-shadow:0 15px 30px rgba(0,0,0,.1);
+  }
+  .nav.active{display:flex}
+  .dropdown-content{position:static;box-shadow:none}
+  .hero h1{font-size:38px}
+}
+</style>
 </head>
-<body class="bg-white text-slate-900 antialiased">
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<body>
 
-    <!-- Header -->
-    <header class="flex items-center justify-between py-5">
-      <div class="flex items-center gap-4">
-        <!-- Single larger logo -->
-        <img src="/solvixl.png" alt="Solvix Logo" class="h-10 sm:h-12 md:h-14 w-auto rounded-md object-contain">
+<!-- HEADER -->
+<header>
+  <img src="assets/solvixl.png" alt="Solvix">
 
-
-      </div>
-
-      <!-- Desktop nav -->
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-700">
-        <a href="#home" class="hover:text-indigo-600">HOME</a>
-        <a href="#about" class="hover:text-indigo-600">ABOUT</a>
-        <a href="#products" class="hover:text-indigo-600">PRODUCT</a>
-        <a href="#gallery" class="hover:text-indigo-600">GALLERY</a>
-        <a href="#blog" class="hover:text-indigo-600">BLOG</a>
-        <a href="#contact" class="hover:text-indigo-600">CONTACT US</a>
-      </nav>
-
-      <!-- Mobile actions -->
-      <div class="flex items-center gap-3">
-        <a href="#contact" class="hidden md:inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-semibold cinematic">Get Free Consultation</a>
-
-        <!-- hamburger -->
-        <button id="mobileToggle" class="md:hidden p-2 rounded-md bg-slate-100" aria-label="menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-700"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>
-        </button>
-      </div>
-    </header>
-
-    <!-- Mobile nav panel (hidden by default) -->
-    <nav id="mobileNav" class="md:hidden hidden mb-6">
-      <div class="bg-white rounded-lg p-4 shadow-sm space-y-2">
-        <a href="#home" class="block py-2">HOME</a>
-        <a href="#about" class="block py-2">ABOUT</a>
-        <a href="#products" class="block py-2">PRODUCT</a>
-        <a href="#gallery" class="block py-2">GALLERY</a>
-        <a href="#blog" class="block py-2">BLOG</a>
-        <a href="#contact" class="block py-2">CONTACT US</a>
-      </div>
-    </nav>
-
-    <!-- HERO -->
-    <main id="home" class="grid md:grid-cols-2 gap-10 items-center py-8">
-      <div class="fade-up">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">We build digital products & growth systems that <span class="text-indigo-600">help startups scale</span></h1>
-        <p class="mt-4 text-slate-600">Solvix designs fast landing pages, brand identities and marketing funnels built for conversion. Launch faster, measure better and grow predictably.</p>
-
-        <div class="mt-6 flex gap-4">
-          <a href="#contact" class="px-5 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-semibold cinematic">Get Free Consultation</a>
-          <a href="#work" class="px-5 py-3 rounded-lg border border-slate-200 text-slate-700 cinematic">View Our Work</a>
-        </div>
-
-        <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <div class="p-3 bg-white rounded-lg card-shadow text-center">
-            <div class="text-xs text-slate-500">Trusted by</div>
-            <div class="mt-2 font-semibold">100+ Startups</div>
-          </div>
-          <div class="p-3 bg-white rounded-lg card-shadow text-center">
-            <div class="text-xs text-slate-500">Avg. Launch</div>
-            <div class="mt-2 font-semibold">2–4 Weeks</div>
-          </div>
-          <div class="p-3 bg-white rounded-lg card-shadow text-center">
-            <div class="text-xs text-slate-500">Satisfaction</div>
-            <div class="mt-2 font-semibold">4.9/5</div>
-          </div>
-          <div class="p-3 bg-white rounded-lg card-shadow text-center">
-            <div class="text-xs text-slate-500">Support</div>
-            <div class="mt-2 font-semibold">24/7</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="fade-up">
-        <div class="rounded-2xl overflow-hidden card-shadow">
-          <!-- Responsive hero image using picture + srcset -->
-          <picture>
-            <source media="(min-width:1024px)" srcset="/images/hero-desktop-1400.jpg">
-            <source media="(min-width:640px)" srcset="/images/hero-tablet-900.jpg">
-            <img src=12.png" alt="Services banner" class="w-full h-[320px] sm:h-[420px] md:h-[520px] lg:h-[560px] object-cover">
-          </picture>
-
-          <div class="p-6 bg-white">
-            <h3 class="text-lg font-semibold">Launch. Scale. Dominate.</h3>
-            <p class="mt-2 text-sm text-slate-600">Complete digital systems: websites, branding, ad funnels & automations.</p>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <!-- Services Section -->
-    <section id="services" class="mt-10">
-      <h2 class="text-2xl font-bold">Our Services</h2>
-      <p class="text-slate-600 mt-2">Startup-specific services designed to help you launch and grow.</p>
-
-      <!-- poster/banner visual (responsive) -->
-      <div class="mt-6 flex justify-center">
-        <picture>
-          <source media="(min-width:1024px)" srcset="/images/services-poster-1200.jpg">
-          <img src="/images/services-poster-1200.jpg" alt="Services Poster" class="max-w-xl rounded-xl card-shadow object-cover">
-        </picture>
-      </div>
-
-      <!-- interactive tab + quick cards -->
-      <div class="mt-8 grid md:grid-cols-3 gap-6 items-start">
-        <div class="space-y-3">
-          <button data-key="web" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic focus-ring">🌐 Website Development</button>
-          <button data-key="brand" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic focus-ring">🎨 Branding</button>
-          <button data-key="marketing" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic focus-ring">📣 Digital Marketing</button>
-          <button data-key="uiux" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic focus-ring">🧭 UI/UX Design</button>
-          <button data-key="motion" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic focus-ring">🎬 Motion & Video</button>
-          <button data-key="automation" class="w-full text-left px-4 py-3 bg-white rounded-lg card-shadow tab-btn cinematic focus-ring">🤖 Automation</button>
-        </div>
-
-        <div class="md:col-span-2">
-          <div id="tab-content" class="p-6 bg-white rounded-lg card-shadow min-h-[160px]">
-            <!-- dynamic content injected by JS -->
-            <h3 class="text-lg font-bold">Website Development</h3>
-            <p class="mt-2 text-slate-600">Fast, responsive and SEO-friendly websites built with analytics and CMS.</p>
-            <div class="mt-4 flex gap-3">
-              <a href="#contact" class="px-4 py-2 rounded-lg bg-indigo-600 text-white cinematic">Start Project</a>
-              <a href="#contact" class="px-4 py-2 rounded-lg border border-slate-200 text-slate-700 cinematic">Learn More</a>
-            </div>
-          </div>
-
-          <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="p-4 bg-white rounded-lg card-shadow">
-              <div class="text-2xl">🌐</div>
-              <div class="font-semibold mt-3">Website Development</div>
-              <div class="text-slate-600 text-sm mt-1">Fast, SEO-ready sites</div>
-            </div>
-            <div class="p-4 bg-white rounded-lg card-shadow">
-              <div class="text-2xl">📣</div>
-              <div class="font-semibold mt-3">Digital Marketing</div>
-              <div class="text-slate-600 text-sm mt-1">Ads, SEO & growth</div>
-            </div>
-            <div class="p-4 bg-white rounded-lg card-shadow">
-              <div class="text-2xl">🎨</div>
-              <div class="font-semibold mt-3">Branding</div>
-              <div class="text-slate-600 text-sm mt-1">Logo & identity</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="mt-12">
-      <h2 class="text-2xl font-bold">What Clients Say</h2>
-      <div class="mt-6 grid sm:grid-cols-2 gap-6">
-        <blockquote class="p-6 bg-white rounded-lg card-shadow">
-          <div class="flex items-center gap-3">
-            <img src="/images/case1.jpg" alt="Anita" class="w-12 h-12 rounded-full object-cover">
-            <div>
-              <div class="font-semibold">Anita Sharma</div>
-              <div class="text-xs text-slate-500">Founder, EduStart</div>
-            </div>
-          </div>
-          <p class="mt-4 text-slate-600">“Hume naye leads 10x milne lage Solvix se kaam karne ke baad. Team professional aur samajhdar hai.”</p>
-        </blockquote>
-
-        <blockquote class="p-6 bg-white rounded-lg card-shadow">
-          <div class="flex items-center gap-3">
-            <img src="/images/case2.jpg" alt="Rohit" class="w-12 h-12 rounded-full object-cover">
-            <div>
-              <div class="font-semibold">Rohit Patel</div>
-              <div class="text-xs text-slate-500">Founder, Foodify</div>
-            </div>
-          </div>
-          <p class="mt-4 text-slate-600">“Website aur campaigns ne hume early traction diya. Support bhi bahut fast hai.”</p>
-        </blockquote>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="mt-12">
-      <h2 class="text-2xl font-bold">Pricing Plans</h2>
-      <p class="text-slate-600 mt-2">Startup-friendly plans — pick what fits your stage.</p>
-
-      <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="p-6 bg-white rounded-xl card-shadow text-center">
-          <div class="text-sm text-slate-500">Landing Page</div>
-          <div class="mt-2 text-3xl font-extrabold">₹999</div>
-          <p class="mt-3 text-sm text-slate-600">One responsive landing page, fast delivery.</p>
-          <ul class="mt-4 text-sm text-slate-600 space-y-1">
-            <li>• Responsive design</li>
-            <li>• 1-day delivery</li>
-            <li>• Basic SEO</li>
-          </ul>
-          <div class="mt-6">
-            <a href="#contact" class="inline-block px-4 py-2 bg-indigo-600 text-white rounded-md cinematic">Choose Landing</a>
-          </div>
-        </div>
-
-        <div class="p-6 bg-white rounded-xl card-shadow text-center">
-          <div class="text-sm text-slate-500">Starter Pack</div>
-          <div class="mt-2 text-3xl font-extrabold">₹9,999</div>
-          <p class="mt-3 text-sm text-slate-600">Logo + Basic Website (5 pages) + Social Kit</p>
-          <ul class="mt-4 text-sm text-slate-600 space-y-1">
-            <li>• 5 Page Website</li>
-            <li>• Brand Kit</li>
-            <li>• 7 Days Support</li>
-          </ul>
-          <div class="mt-6">
-            <a href="#contact" class="inline-block px-4 py-2 bg-indigo-600 text-white rounded-md cinematic">Start</a>
-          </div>
-        </div>
-
-        <div class="p-6 bg-white rounded-xl card-shadow text-center border-2 border-indigo-100">
-          <div class="text-sm text-slate-500">Growth Pack</div>
-          <div class="mt-2 text-3xl font-extrabold">₹19,999</div>
-          <p class="mt-3 text-sm text-slate-600">Full Website + SEO Basics + 10 Social Posts</p>
-          <ul class="mt-4 text-sm text-slate-600 space-y-1">
-            <li>• Full Website</li>
-            <li>• Basic SEO</li>
-            <li>• 30 Days Support</li>
-          </ul>
-          <div class="mt-6">
-            <a href="#contact" class="inline-block px-4 py-2 bg-indigo-600 text-white rounded-md cinematic">Choose Plan</a>
-          </div>
-        </div>
-
-        <div class="p-6 bg-white rounded-xl card-shadow text-center">
-          <div class="text-sm text-slate-500">Premium Pack</div>
-          <div class="mt-2 text-3xl font-extrabold">₹39,999</div>
-          <p class="mt-3 text-sm text-slate-600">Branding + Website + Lead Gen + CRM</p>
-          <ul class="mt-4 text-sm text-slate-600 space-y-1">
-            <li>• End-to-end Branding</li>
-            <li>• Lead Generation</li>
-            <li>• 60 Days Support</li>
-          </ul>
-          <div class="mt-6">
-            <a href="#contact" class="inline-block px-4 py-2 bg-indigo-600 text-white rounded-md cinematic">Choose Plan</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Clients / Partners -->
-    <section id="gallery" class="mt-12">
-      <h2 class="text-2xl font-bold">Clients / Partners</h2>
-      <div class="mt-6 flex flex-wrap gap-6 items-center">
-        <img src="/images/partner1.svg" alt="partner1" class="h-12 grayscale opacity-90 rounded" />
-        <img src="/images/partner2.svg" alt="partner2" class="h-12 grayscale opacity-90 rounded" />
-        <img src="/images/partner3.svg" alt="partner3" class="h-12 grayscale opacity-90 rounded" />
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="mt-12 mb-12">
-      <div class="bg-white p-6 rounded-xl card-shadow">
-        <h2 class="text-2xl font-bold">Let’s Build Something Great Together</h2>
-        <p class="text-slate-600 mt-2">Book a free consultation or send a message — we will respond within 24 hours.</p>
-
-        <div class="mt-6 grid gap-6 sm:grid-cols-2">
-          <!-- Improved form: required fields, accessible labels, success toast -->
-          <form id="contactForm" class="space-y-4" onsubmit="handleSubmit(event)" novalidate>
-            <div>
-              <label class="text-sm">Full name</label>
-              <input name="name" required class="mt-2 w-full rounded-md border px-3 py-3 text-sm focus-ring" placeholder="Your name" />
-            </div>
-            <div>
-              <label class="text-sm">Email</label>
-              <input name="email" type="email" required class="mt-2 w-full rounded-md border px-3 py-3 text-sm focus-ring" placeholder="you@company.com" />
-            </div>
-            <div>
-              <label class="text-sm">Phone / WhatsApp</label>
-              <input name="phone" required class="mt-2 w-full rounded-md border px-3 py-3 text-sm focus-ring" placeholder="+91 9XXXXXXXXX" />
-            </div>
-            <div>
-              <label class="text-sm">Message</label>
-              <textarea name="message" required class="mt-2 w-full rounded-md border px-3 py-3 text-sm focus-ring" rows="5" placeholder="Tell us about your project"></textarea>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <button type="submit" id="sendBtn" class="px-5 py-3 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white rounded-md shadow-md cinematic">Send Message</button>
-              <div id="formStatus" class="text-sm text-green-600 hidden">Message sent — thank you!</div>
-            </div>
-          </form>
-
-          <div>
-            <div class="p-4 bg-slate-50 rounded-lg">
-              <div class="text-sm text-slate-500">Phone / WhatsApp</div>
-              <div class="mt-2 font-semibold">+91 9300594567</div>
-
-              <div class="mt-4 text-sm text-slate-500">Email</div>
-              <div class="mt-2 font-semibold">jadhav.h@gmaill.com</div>
-
-              <div class="mt-4 text-sm text-slate-500">Location</div>
-              <div class="mt-2 font-semibold">Pune, Maharashtra, India</div>
-
-              <div class="mt-6">
-                <a href="#" class="inline-block px-4 py-2 border rounded-md cinematic">Privacy Policy</a>
-              </div>
-            </div>
-
-            <div class="mt-6 text-sm text-slate-600">
-              <div class="font-semibold">Follow Us</div>
-              <div class="mt-3 flex gap-3">
-                <a href="#" class="p-2 bg-white rounded-md shadow-sm cinematic">Twitter</a>
-                <a href="#" class="p-2 bg-white rounded-md shadow-sm cinematic">Instagram</a>
-                <a href="#" class="p-2 bg-white rounded-md shadow-sm cinematic">LinkedIn</a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="py-8 text-sm text-slate-500 text-center">
-      <div class="border-t pt-6">© 2025 Solvix — Digital Startup Agency. All rights reserved.</div>
-    </footer>
-
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
   </div>
 
-  <!-- Minimal JS for tabbed service content + mobile nav + form handling -->
-  <script>
-    (function(){
-      const data = {
-        web: {title: 'Website Development', desc: 'Fast, responsive and SEO-friendly websites built with analytics and CMS.'},
-        brand: {title: 'Branding & Graphics', desc: 'Logo systems, identity and marketing collaterals that feel premium.'},
-        marketing: {title: 'Digital Marketing', desc: 'Performance campaigns, SEO and data-driven growth strategies.'},
-        uiux: {title: 'UI / UX Design', desc: 'Prototypes, flows and conversion-oriented interfaces.'},
-        motion: {title: 'Motion & Video', desc: 'Animated ads, explainers and short social promos.'},
-        automation: {title: 'Automation & Support', desc: 'WhatsApp flows, CRM integrations and lead systems.'}
-      };
+  <nav class="nav" id="navMenu">
+    <a href="index.html">Home</a>
 
-      const tabBtns = document.querySelectorAll('.tab-btn');
-      const tabContent = document.getElementById('tab-content');
+    <div class="dropdown">
+      <button class="dropbtn">Services ▾</button>
+      <div class="dropdown-content">
+        <a href="services/website-development.html">Website Development</a>
+        <a href="services/digital-marketing.html">Digital Marketing</a>
+        <a href="services/motion-ads-video.html">Motion Ads & Video</a>
+        <a href="services/graphic-design.html">Graphic Design</a>
+        <a href="services/logo-brand-design.html">Logo & Brand Design</a>
+        <a href="services/ui-ux-design.html">UI / UX Design</a>
+      </div>
+    </div>
 
-      function render(key){
-        const item = data[key];
-        tabContent.innerHTML = `<h3 class="text-lg font-bold">${item.title}</h3>
-                                <p class="mt-2 text-slate-600">${item.desc}</p>
-                                <div class="mt-4 flex gap-3">
-                                  <a href="#contact" class="px-4 py-2 rounded-lg bg-indigo-600 text-white cinematic">Start Project</a>
-                                  <a href="#contact" class="px-4 py-2 rounded-lg border border-slate-200 text-slate-700 cinematic">Learn More</a>
-                                </div>`;
-        tabBtns.forEach(b => b.classList.remove('opacity-100'));
-      }
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-      tabBtns.forEach(b => b.addEventListener('click', () => {
-        render(b.getAttribute('data-key'));
-        // simple highlight
-        tabBtns.forEach(x => x.classList.remove('ring-2','ring-indigo-200'));
-        b.classList.add('ring-2','ring-indigo-200');
-        window.scrollTo({top: document.getElementById('services').offsetTop - 20, behavior:'smooth'});
-      }));
+<!-- HERO -->
+<section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <h1>Digital Solutions<br>That Actually Work</h1>
+    <p>Solvix helps businesses grow with clarity, design & execution.</p>
+    <a class="btn" href="contact.html">Start a Conversation</a>
+  </div>
+</section>
 
-      // init
-      render('web');
-      document.querySelector('.tab-btn[data-key="web"]').classList.add('ring-2','ring-indigo-200');
+<!-- SERVICES -->
+<section>
+  <div class="section-title">
+    <h2>What We Do</h2>
+    <p>Practical services designed for growth</p>
+  </div>
+  <div class="services">
+    <div class="card"><h3>Website Development</h3></div>
+    <div class="card"><h3>Digital Marketing</h3></div>
+    <div class="card"><h3>Motion Ads & Videos</h3></div>
+    <div class="card"><h3>Graphic Design</h3></div>
+    <div class="card"><h3>Logo & Brand Design</h3></div>
+    <div class="card"><h3>UI / UX Design</h3></div>
+  </div>
+</section>
 
-      // mobile menu toggle
-      const mobileBtn = document.getElementById('mobileToggle');
-      const mobileNav = document.getElementById('mobileNav');
-      if (mobileBtn && mobileNav) {
-        mobileBtn.addEventListener('click', () => {
-          mobileNav.classList.toggle('hidden');
-        });
-      }
-    })();
+<!-- CLIENTS -->
+<section class="clients-section">
+  <div class="slider-track">
+    <div class="logo-box"><img src="assets/client1.png"></div>
+    <div class="logo-box"><img src="assets/client2.png"></div>
+    <div class="logo-box"><img src="assets/client3.png"></div>
+    <div class="logo-box"><img src="assets/client4.png"></div>
+    <div class="logo-box"><img src="assets/client5.png"></div>
+  </div>
+</section>
 
-    // Form handling (UI-first). Replace setTimeout simulation with real POST to your endpoint when ready.
-    function handleSubmit(e){
-      e.preventDefault();
-      const btn = document.getElementById('sendBtn');
-      const status = document.getElementById('formStatus');
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-title">
+    <h2>What Clients Say</h2>
+    <p>Real feedback from real people</p>
+  </div>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <p>“Clear thinking and solid execution.”</p>
+      <h4>— Business Owner</h4>
+    </div>
+    <div class="testimonial-card">
+      <p>“Professional, honest, and reliable.”</p>
+      <h4>— Startup Founder</h4>
+    </div>
+  </div>
+</section>
 
-      // simple client-side validation
-      const form = e.target;
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const phone = form.phone.value.trim();
-      const message = form.message.value.trim();
+<!-- CTA -->
+<section class="cta">
+  <h2>Let’s Build Something That Matters</h2>
+  <a href="contact.html">Get Started</a>
+</section>
 
-      if (!name || !email || !phone || !message) {
-        alert('Please fill all fields.');
-        return;
-      }
+<!-- FOOTER -->
+<footer>
+  <div class="footer-bottom">
+    © 2025 Solvix. All rights reserved.
+  </div>
+</footer>
 
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-
-      // Simulate send — replace with fetch() to your API/Netlify/Formspree endpoint
-      setTimeout(()=> {
-        btn.disabled = false;
-        btn.textContent = 'Send Message';
-        status.classList.remove('hidden');
-        form.reset();
-        setTimeout(()=> status.classList.add('hidden'), 5000);
-      }, 900);
-    }
-  </script>
+<!-- JS -->
+<script>
+const hamburger=document.getElementById("hamburger");
+const navMenu=document.getElementById("navMenu");
+hamburger.addEventListener("click",()=>navMenu.classList.toggle("active"));
+</script>
 
 </body>
 </html>
