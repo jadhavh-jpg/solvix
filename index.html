@@ -6,21 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-  .experience{
-  background:linear-gradient(120deg,#fdfefe,#f4f9ff);
-}
-.experience .card{
-  text-align:center;
-  padding:40px 20px;
-}
-.experience h3{
-  font-size:46px;
-  color:var(--orange);
-}
-.experience p{
-  font-weight:600;
-  margin-top:6px;
-}
+
 
 /* ================= ROOT ================= */
 :root{
@@ -33,6 +19,66 @@
   --muted:#6b7280;
   --card:#f7f9fb;
   --radius:18px;
+}
+/* GRID FIX */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:28px;
+}
+
+/* EXPERIENCE SECTION FIX */
+.experience{
+  background:linear-gradient(120deg,#fff7ed,#fef3c7);
+  padding:90px 8%;
+}
+
+.experience .card{
+  text-align:center;
+  padding:40px 20px;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.experience h3{
+  font-size:46px;
+  color:#FE7F2D;
+}
+.experience p{
+  font-weight:600;
+  margin-top:6px;
+  color:#233D4D;
+}
+/* GRID FIX */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:28px;
+}
+
+/* EXPERIENCE SECTION FIX */
+.experience{
+  background:linear-gradient(120deg,#fff7ed,#fef3c7);
+  padding:90px 8%;
+}
+
+.experience .card{
+  text-align:center;
+  padding:40px 20px;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.experience h3{
+  font-size:46px;
+  color:#FE7F2D;
+}
+.experience p{
+  font-weight:600;
+  margin-top:6px;
+  color:#233D4D;
 }
 
 *{
