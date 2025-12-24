@@ -1,47 +1,38 @@
-head
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Solvix – Digital Solutions That Work</title>
+<title>Solvix – Digital Growth Studio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Solvix – Digital Solutions That Work</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-/* ========== ROOT THEME ========== */
+/* ===== IMAGE-INSPIRED COLOR PALETTE ===== */
 :root{
-  --dark:#233D4D;
-  --orange:#FE7F2D;
-  --yellow:#FCCA46;
-  --green:#A1C181;
+  --dark:#1F3A44;      /* deep teal */
+  --primary:#233D4D;  /* slate blue */
+  --accent:#FE7F2D;   /* orange */
+  --highlight:#FCCA46;/* yellow */
+  --soft:#A1C181;     /* soft green */
   --bg:#ffffff;
   --muted:#6b7280;
   --radius:18px;
 }
 
-/* ========== RESET ========== */
+/* ===== RESET ===== */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Inter,system-ui,-apple-system,sans-serif;
+  font-family:Inter, system-ui, -apple-system, sans-serif;
 }
 body{
   background:var(--bg);
   color:var(--dark);
   line-height:1.6;
 }
+html{scroll-behavior:smooth}
 
-/* ========== HEADER ========== */
+/* ===== HEADER ===== */
 header{
   position:sticky;
   top:0;
@@ -51,7 +42,7 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  box-shadow:0 8px 30px rgba(0,0,0,.06);
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
 header img{height:42px}
 
@@ -66,7 +57,7 @@ nav a{
   font-weight:500;
   color:var(--dark);
 }
-nav a:hover{color:var(--orange)}
+nav a:hover{color:var(--accent)}
 
 /* Dropdown */
 .dropdown{position:relative}
@@ -85,55 +76,69 @@ nav a:hover{color:var(--orange)}
   display:block;
   padding:12px 20px;
 }
-.dropdown-content a:hover{
-  background:var(--yellow);
-}
+.dropdown-content a:hover{background:var(--highlight)}
 .dropdown.open .dropdown-content{display:block}
 
-/* ========== HERO ========== */
+/* ===== HERO (STRONG & CINEMATIC) ===== */
 .hero{
-  height:92vh;
+  min-height:95vh;
   display:flex;
   align-items:center;
   padding:0 8%;
   background:
-    radial-gradient(circle at top left, var(--yellow), transparent 40%),
-    linear-gradient(120deg, var(--dark), #1b2f3c);
+    radial-gradient(circle at 20% 20%, var(--highlight), transparent 35%),
+    radial-gradient(circle at 80% 10%, var(--soft), transparent 30%),
+    linear-gradient(120deg, var(--dark), var(--primary));
   color:#fff;
 }
+.hero-content{
+  max-width:640px;
+}
 .hero h1{
-  font-size:56px;
+  font-size:60px;
   line-height:1.1;
   margin-bottom:20px;
 }
+.hero h1 span{color:var(--highlight)}
 .hero p{
-  max-width:520px;
-  opacity:.9;
-  margin-bottom:32px;
+  font-size:18px;
+  opacity:.95;
+  margin-bottom:36px;
+}
+.hero-actions{
+  display:flex;
+  gap:18px;
 }
 .btn{
-  display:inline-block;
-  padding:14px 30px;
+  padding:14px 32px;
   border-radius:999px;
-  background:var(--orange);
-  color:#fff;
-  font-weight:600;
   text-decoration:none;
+  font-weight:600;
 }
-.btn:hover{background:#e96a1c}
+.btn-primary{
+  background:var(--accent);
+  color:#fff;
+}
+.btn-primary:hover{background:#e56b1f}
+.btn-outline{
+  border:2px solid #fff;
+  color:#fff;
+}
+.btn-outline:hover{
+  background:#fff;
+  color:var(--dark);
+}
 
-/* ========== SECTION ========== */
+/* ===== SECTIONS ===== */
 section{padding:90px 8%}
 .section-title{
   text-align:center;
   margin-bottom:60px;
 }
-.section-title h2{
-  font-size:38px;
-  margin-bottom:10px;
-}
+.section-title h2{font-size:38px;margin-bottom:10px}
+.section-title p{color:var(--muted)}
 
-/* ========== SERVICES ========== */
+/* ===== SERVICES ===== */
 .services{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -143,54 +148,59 @@ section{padding:90px 8%}
   background:#f9fafb;
   padding:34px;
   border-radius:var(--radius);
-  transition:.3s;
+  transition:.35s;
 }
 .card:hover{
   transform:translateY(-8px);
-  box-shadow:0 20px 40px rgba(0,0,0,.1);
+  box-shadow:0 20px 45px rgba(0,0,0,.12);
 }
 .card h3{margin-bottom:10px}
 
-/* ========== EXPERIENCE ========== */
+/* ===== EXPERIENCE ===== */
 .stats{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:24px;
+  gap:26px;
 }
 .stat{
-  background:var(--dark);
+  background:var(--primary);
   color:#fff;
-  padding:40px;
+  padding:44px;
   border-radius:var(--radius);
   text-align:center;
 }
-.stat h3{font-size:36px;color:var(--yellow)}
+.stat h3{
+  font-size:40px;
+  color:var(--highlight);
+}
 
-/* ========== GALLERY ========== */
+/* ===== GALLERY ===== */
 .gallery{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:22px;
 }
 .gallery div{
-  background:#e5e7eb;
   height:180px;
   border-radius:16px;
+  background:
+    linear-gradient(120deg,var(--soft),var(--highlight));
   display:flex;
   align-items:center;
   justify-content:center;
   font-weight:600;
+  color:#1f2937;
 }
 
-/* ========== CTA ========== */
+/* ===== CTA ===== */
 .cta{
-  background:linear-gradient(120deg,var(--orange),var(--yellow));
+  background:linear-gradient(120deg,var(--accent),var(--highlight));
   text-align:center;
   color:#1f2937;
 }
 .cta h2{font-size:34px;margin-bottom:12px}
 
-/* ========== FOOTER ========== */
+/* ===== FOOTER ===== */
 footer{
   background:#0f172a;
   color:#cbd5e1;
@@ -216,7 +226,7 @@ footer a:hover{color:#fff}
   font-size:13px;
 }
 
-/* ========== MOBILE ========== */
+/* ===== MOBILE ===== */
 @media(max-width:768px){
   .hero h1{font-size:40px}
 }
@@ -234,620 +244,4 @@ footer a:hover{color:#fff}
 
       <li class="dropdown" id="servicesDropdown">
         <a href="#" id="servicesBtn">Services ▾</a>
-        <div class="dropdown-content">
-          <a href="services/website-development.html">Website Development</a>
-          <a href="services/digital-marketing.html">Digital Marketing</a>
-          <a href="services/motion-ads.html">Motion Ads & Video</a>
-          <a href="services/graphic-design.html">Graphic Design</a>
-          <a href="services/ui-ux.html">UI / UX Design</a>
-        </div>
-      </li>
-
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div>
-    <h1>Digital Solutions<br>That Actually Work</h1>
-    <p>Solvix helps businesses grow with clarity, design, strategy and execution.</p>
-    <a class="btn" href="#contact">Start a Conversation</a>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section>
-  <div class="section-title">
-    <h2>Our Services</h2>
-  </div>
-  <div class="services">
-    <div class="card"><h3>Website Development</h3><p>Fast, scalable, conversion-focused websites.</p></div>
-    <div class="card"><h3>Digital Marketing</h3><p>SEO, Ads & lead generation systems.</p></div>
-    <div class="card"><h3>Motion Ads & Video</h3><p>High-impact ads that stop the scroll.</p></div>
-    <div class="card"><h3>Graphic Design</h3><p>Posters, creatives & brand assets.</p></div>
-    <div class="card"><h3>Logo & Branding</h3><p>Strong identities that build trust.</p></div>
-    <div class="card"><h3>UI / UX Design</h3><p>User-first digital experiences.</p></div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section>
-  <div class="section-title">
-    <h2>Our Experience</h2>
-  </div>
-  <div class="stats">
-    <div class="stat"><h3>50+</h3><p>Projects Delivered</p></div>
-    <div class="stat"><h3>20+</h3><p>Brands Served</p></div>
-    <div class="stat"><h3>5+</h3><p>Years Experience</p></div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section>
-  <div class="section-title">
-    <h2>Our Work</h2>
-  </div>
-  <div class="gallery">
-    <div>Website</div>
-    <div>Logo</div>
-    <div>Motion Ad</div>
-    <div>Poster</div>
-    <div>UI Design</div>
-    <div>Campaign</div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-  <h2>Let’s Build Something Powerful</h2>
-  <p>Ready to grow your brand digitally?</p>
-  <a class="btn" href="#contact">Get Started</a>
-</section>
-
-<!-- FOOTER -->
-<footer id="contact">
-  <div class="footer-grid">
-    <div>
-      <h4>Solvix</h4>
-      <p>Digital solutions that work.</p>
-    </div>
-    <div>
-      <h4>Services</h4>
-      <a href="#">Website Development</a>
-      <a href="#">Digital Marketing</a>
-      <a href="#">Motion Ads</a>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <a href="tel:8821967313">📞 8821967313</a>
-      <a href="mailto:jadhav,h@gmail.com">📧 jadhav,h@gmail.com</a>
-      <p>Pune, India</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    © 2025 Solvix. All rights reserved.
-  </div>
-</footer>
-
-<script>
-const servicesBtn=document.getElementById("servicesBtn");
-const dropdown=document.getElementById("servicesDropdown");
-
-servicesBtn.addEventListener("click",e=>{
-  e.preventDefault();
-  e.stopPropagation();
-  dropdown.classList.toggle("open");
-});
-document.addEventListener("click",()=>dropdown.classList.remove("open"));
-</script>
-
-</body>
-</html>
-
-</header>
-
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-
-    <li class="dropdown">
-      <a href="#" class="dropbtn" id="servicesBtn">Services ▾</a>
-
-      <div class="dropdown-content">
-        <a href="services/website-development.html">Website Development</a>
-        <a href="services/digital-marketing.html">Digital Marketing</a>
-        <a href="services/motion-ads.html">Motion Ads & Video</a>
-        <a href="services/graphic-design.html">Graphic Design</a>
-        <a href="services/ui-ux.html">UI / UX Design</a>
-      </div>
-    </li>
-
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-
-
-}
-
-/* HAMBURGER */
-.hamburger{
-  display:none;
-  flex-direction:column;
-  cursor:pointer;
-}
-.hamburger span{
-  height:3px;
-  width:30px;
-  background:var(--dark);
-  margin:5px 0;
-  border-radius:4px;
-}
-
-/* ================= HERO ================= */
-.hero{
-  position:relative;
-  height:92vh;
-  display:flex;
-  align-items:center;
-  overflow:hidden;
-}
-
-.hero video{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:-2;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(
-      120deg,
-      rgba(35,61,77,.88),
-      rgba(254,127,45,.75)
-    );
-  z-index:-1;
-}
-
-.hero-content{
-  max-width:760px;
-  padding-left:8%;
-  color:#fff;
-}
-
-.hero h1{
-  font-size:56px;
-  line-height:1.1;
-  margin-bottom:20px;
-}
-
-.hero p{
-  font-size:18.5px;
-  opacity:.95;
-  margin-bottom:34px;
-}
-
-.hero .btn{
-  display:inline-block;
-  padding:16px 34px;
-  border-radius:999px;
-  background:linear-gradient(120deg,var(--orange),var(--yellow));
-  color:#000;
-  font-weight:600;
-  text-decoration:none;
-  transition:.3s;
-}
-.hero .btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 12px 30px rgba(254,127,45,.45);
-}
-
-/* ================= SECTIONS ================= */
-section{padding:100px 8%}
-
-.section-title{
-  text-align:center;
-  margin-bottom:70px;
-}
-.section-title h2{
-  font-size:40px;
-  margin-bottom:12px;
-  color:var(--dark);
-}
-.section-title p{
-  color:var(--muted);
-  font-size:16px;
-}
-
-/* SERVICES */
-.services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-}
-.card{
-  background:var(--card);
-  padding:36px;
-  border-radius:var(--radius);
-  transition:.35s;
-}
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 50px rgba(35,61,77,.18);
-}
-.card h3{
-  font-size:20px;
-  margin-bottom:10px;
-}
-.card p{
-  color:var(--muted);
-  font-size:15.5px;
-}
-<section class="experience">
-  <div class="section-title">
-    <h2>Our Experience</h2>
-    <p>Proven work that builds trust and confidence</p>
-  </div>
-
-  <div class="grid">
-    <div class="card">
-      <h3>50+</h3>
-      <p>Projects Delivered</p>
-    </div>
-    <div class="card">
-      <h3>20+</h3>
-      <p>Brands Served</p>
-    </div>
-    <div class="card">
-      <h3>5+</h3>
-      <p>Years Experience</p>
-    </div>
-  </div>
-</section>
-
-/* CLIENTS */
-.clients{
-  background:linear-gradient(120deg,#fff8f2,#fff);
-}
-.client-track{
-  display:flex;
-  gap:34px;
-  animation:scroll 24s linear infinite;
-}
-.client-logo{
-  min-width:190px;
-  height:110px;
-  background:#fff;
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-.client-logo img{
-  max-width:130px;
-  max-height:60px;
-}
-
-@keyframes scroll{
-  0%{transform:translateX(0)}
-  100%{transform:translateX(-50%)}
-}
-
-/* TESTIMONIALS */
-.testimonials{
-  background:linear-gradient(120deg,#ffffff,#f6fbf6);
-}
-.testimonial-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-}
-.testimonial{
-  background:#fff;
-  padding:36px;
-  border-radius:18px;
-  box-shadow:0 15px 40px rgba(0,0,0,.1);
-}
-.testimonial h4{
-  margin-top:16px;
-  color:var(--green);
-}
-
-/* CTA */
-.cta{
-  background:linear-gradient(120deg,var(--dark),#1b2f3b);
-  color:#fff;
-  text-align:center;
-}
-.cta h2{
-  font-size:36px;
-  margin-bottom:14px;
-}
-.cta a{
-  display:inline-block;
-  margin-top:22px;
-  padding:16px 36px;
-  border-radius:999px;
-  background:var(--yellow);
-  color:#000;
-  font-weight:600;
-  text-decoration:none;
-}
-
-/* FOOTER */
-footer{
-  background:#0f1f29;
-  color:#cbd5e1;
-  padding:80px 8% 30px;
-}
-.footer-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:40px;
-}
-footer h4{
-  margin-bottom:16px;
-  color:#fff;
-}
-footer a{
-  display:block;
-  color:#cbd5e1;
-  text-decoration:none;
-  margin-bottom:10px;
-  font-size:14.5px;
-}
-footer a:hover{
-  color:var(--yellow);
-}
-.footer-bottom{
-  border-top:1px solid rgba(255,255,255,.1);
-  margin-top:50px;
-  padding-top:20px;
-  text-align:center;
-  font-size:13px;
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-  .hamburger{display:flex}
-  .nav{
-    position:absolute;
-    top:90px;
-    left:0;
-    width:100%;
-    background:#fff;
-    flex-direction:column;
-    padding:26px 0;
-    display:none;
-    box-shadow:0 20px 40px rgba(0,0,0,.2);
-  }
-  .nav.active{display:flex}
-  .nav a,.dropbtn{
-    font-size:17px;
-    padding:14px 0;
-  }
-  .dropdown-content{
-    position:static;
-    box-shadow:none;
-  }
-  .hero h1{font-size:40px}
-}<style>
-.site-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 8%;
-  background:#fff;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-
-.logo img{
-  height:40px;
-}
-
-.main-nav ul{
-  list-style:none;
-  display:flex;
-  gap:28px;
-  align-items:center;
-}
-
-.main-nav a{
-  text-decoration:none;
-  color:#233D4D;
-  font-weight:500;
-}
-
-/* Dropdown */
-.dropdown{
-  position:relative;
-}
-
-.dropdown-content{
-  position:absolute;
-  top:130%;
-  left:0;
-  min-width:260px;
-  background:#fff;
-  border-radius:14px;
-  box-shadow:0 20px 40px rgba(0,0,0,.15);
-  padding:10px 0;
-  display:none;
-}
-
-.dropdown-content a{
-  display:block;
-  padding:12px 18px;
-  color:#233D4D;
-}
-
-.dropdown-content a:hover{
-  background:#FCCA46;
-}
-
-/* Open state */
-.dropdown.open .dropdown-content{
-  display:block;
-}
-</style>
-
-</style>
-</head>
-
-<body>
-
-<header>
-  <img src="assets/solvix.png" alt="Solvix">
-
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </div>
-
-  <nav class="nav" id="navMenu">
-    <a href="index.html">Home</a>
-
-    <div class="dropdown">
-      <button class="dropbtn">Ser<a href="javascript:void(0)" class="dropbtn">Services ▾</a>
-vices ▾</button>
-      <div class="dropdown-content">
-        <a href="services/website-development.html">Website Development</a>
-        <a href="services/digital-marketing.html">Digital Marketing</a>
-
-        <a href="services/motion-ads-video.html">Motion Ads & Video</a>
-        <a href="services/graphic-design.html">Graphic Design</a>
-        <a href="services/logo-brand-design.html">Logo & Brand Design</a>
-        <a href="services/ui-ux-design.html">UI / UX Design</a>
-      </div>
-    </div>
-
-    <a href="gallery.html">Gallery</a>
-    <a href="#contact">Contact</a>
-
-  </nav>
-</header>
-
-<section class="hero">
-  <video autoplay muted loop playsinline>
-    <source src="assets/hero.mp4" type="video/mp4">
-  </video>
-  <div class="hero-content">
-    <h1>Digital Solutions<br>That Actually Work</h1>
-    <p>Solvix helps businesses grow with clarity, design & execution.</p>
-    <a class="btn" href="contact.html">Start a Conversation</a>
-  </div>
-</section>
-
-<section>
-  <div class="section-title">
-    <h2>What We Do</h2>
-    <p>Clear services built for scale & results</p>
-  </div>
-
-  <div class="services">
-    <div class="card"><h3>Website Development</h3><p>Fast, scalable, trust-driven websites.</p></div>
-    <div class="card"><h3>Digital Marketing</h3><p>SEO & performance strategies.</p></div>
-    <div class="card"><h3>Motion Ads & Video</h3><p>High-impact short videos.</p></div>
-    <div class="card"><h3>Graphic Design</h3><p>Clean posters & creatives.</p></div>
-    <div class="card"><h3>Logo & Branding</h3><p>Memorable brand identities.</p></div>
-    <div class="card"><h3>UI / UX Design</h3><p>Interfaces users love.</p></div>
-  </div>
-</section>
-
-<section class="clients">
-  <div class="client-track">
-    <div class="client-logo"><img src="assets/client1.png"></div>
-    <div class="client-logo"><img src="assets/client2.png"></div>
-    <div class="client-logo"><img src="assets/client3.png"></div>
-    <div class="client-logo"><img src="assets/client4.png"></div>
-    <div class="client-logo"><img src="assets/client5.png"></div>
-  </div>
-</section>
-
-<section class="testimonials">
-  <div class="section-title">
-    <h2>What Clients Say</h2>
-  </div>
-  <div class="testimonial-grid">
-    <div class="testimonial">
-      <p>“Clear thinking and strong execution.”</p>
-      <h4>— Business Owner</h4>
-    </div>
-    <div class="testimonial">
-      <p>“Professional, honest, and reliable team.”</p>
-      <h4>— Startup Founder</h4>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <h2>Let’s Build Something That Matters</h2>
-  <a href="contact.html">Get Started</a>
-</section>
-
-<footer id="contact">
-  <div class="footer-grid">
-    <div>
-      <h4>Solvix</h4>
-      <a href="#">About</a>
-      <a href="#">Approach</a>
-      <a href="#">Insights</a>
-    </div>
-    <div>
-      <h4>Services</h4>
-      <a href="#">Web Development</a>
-      <a href="#">Digital Marketing</a>
-      <a href="#">Branding</a>
-    </div>
-    <div>
-      <h4>Connect</h4>
-      <a href="#">📞 8821967313</a>
-      <a href="#">📧 jadhav,h@gmail.com</a>
-      <a href="#">📍 Pune, India</a>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    © 2025 Solvix. All rights reserved.
-  </div>
-</footer>
-
-<script>
-const hamburger=document.getElementById("hamburger");
-const navMenu=document.getElementById("navMenu");
-hamburger.addEventListener("click",()=>navMenu.classList.toggle("active"));
-</script>
-<script>
-const servicesBtn = document.getElementById("servicesBtn");
-const dropdown = document.querySelector(".dropdown");
-
-// Toggle dropdown
-servicesBtn.addEventListener("click", function(e){
-  e.preventDefault();
-  e.stopPropagation();
-  dropdown.classList.toggle("open");
-});
-
-// Close dropdown when clicking outside
-document.addEventListener("click", function(){
-  dropdown.classList.remove("open");
-});
-
-// Prevent close when clicking inside dropdown
-document.querySelector(".dropdown-content").addEventListener("click", function(e){
-  e.stopPropagation();
-});
-</script>
-
-</body>
-</html>
+        <d
