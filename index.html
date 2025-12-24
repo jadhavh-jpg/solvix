@@ -82,49 +82,91 @@ nav a:hover{color:var(--accent)}
 .dropdown.open .dropdown-content{display:block}
 
 /* ================= HERO ================= */
+/* HERO SECTION */
 .hero{
-  min-height:92vh;
+  min-height:90vh;
   display:flex;
   align-items:center;
   padding:0 8%;
-  background:
-    linear-gradient(120deg,var(--navy),var(--navy-light));
-  color:#fff;
+  background:linear-gradient(
+    -45deg,
+    #0f2a44,
+    #12395c,
+    #1b4d7a,
+    #0f2a44
+  );
+  background-size:400% 400%;
+  animation:gradientMove 12s ease infinite;
 }
-.hero-content{max-width:640px}
+
+@keyframes gradientMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.hero-content{
+  max-width:640px;
+  color:#ffffff;
+}
+
 .hero h1{
-  font-size:56px;
+  font-size:52px;
   line-height:1.1;
   margin-bottom:18px;
 }
+
 .hero p{
   font-size:18px;
-  opacity:.95;
-  margin-bottom:34px;
+  opacity:.9;
+  margin-bottom:32px;
 }
+
+/* HERO BUTTONS */
 .hero-actions{
   display:flex;
-  gap:18px;
+  gap:16px;
 }
+
 .btn{
-  padding:14px 32px;
+  padding:14px 30px;
   border-radius:999px;
   font-weight:600;
+  font-size:15px;
   text-decoration:none;
+  transition:.3s ease;
 }
-.btn-primary{
-  background:#fff;
-  color:var(--navy);
+
+.btn.primary{
+  background:#ffffff;
+  color:#0f2a44;
 }
-.btn-primary:hover{background:#e5e7eb}
-.btn-outline{
-  border:2px solid #fff;
-  color:#fff;
+
+.btn.primary:hover{
+  transform:translateY(-2px);
 }
-.btn-outline:hover{
-  background:#fff;
-  color:var(--navy);
+
+.btn.outline{
+  border:2px solid #ffffff;
+  color:#ffffff;
 }
+
+.btn.outline:hover{
+  background:#ffffff;
+  color:#0f2a44;
+}
+
+/* MOBILE HERO FIX */
+@media(max-width:768px){
+
+  .hero{
+    padding:0 6%;
+    text-align:left;
+  }
+
+  .hero h1{
+    font-size:34px;
+
 
 /* ================= SECTION ================= */
 section{padding:90px 8%}
