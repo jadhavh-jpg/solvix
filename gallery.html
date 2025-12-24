@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Work | Solvix</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --dark:#233D4D;
+  --orange:#FE7F2D;
+  --yellow:#FCCA46;
+  --green:#A1C181;
+  --bg:#f9fafb;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui,sans-serif}
+body{background:var(--bg);color:#1f2937}
+
+header{
+  padding:22px 8%;
+  border-bottom:1px solid #e5e7eb;
+}
+header a{text-decoration:none;color:var(--dark);font-weight:600}
+
+section{padding:80px 8%}
+h2{font-size:34px;margin-bottom:30px}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+}
+.card{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 45px rgba(254,127,45,.35);
+}
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+.card p{
+  padding:16px;
+  font-weight:600;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html">← Back to Home</a>
+</header>
+
+<section>
+  <h2>Graphic Design</h2>
+  <div class="grid">
+    <div class="card"><img src="assets/g1.jpg"><p>Poster Design</p></div>
+    <div class="card"><img src="assets/g2.jpg"><p>Social Media Creatives</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Logo Design</h2>
+  <div class="grid">
+    <div class="card"><img src="assets/l1.png"><p>Brand Logo</p></div>
+    <div class="card"><img src="assets/l2.png"><p>Identity Design</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Motion Ads & Videos</h2>
+  <div class="grid">
+    <div class="card"><img src="assets/v1.jpg"><p>Instagram Ad</p></div>
+    <div class="card"><img src="assets/v2.jpg"><p>YouTube Motion Ad</p></div>
+  </div>
+</section>
+
+</body>
+</html>
