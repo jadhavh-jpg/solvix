@@ -531,6 +531,27 @@ const hamburger=document.getElementById("hamburger");
 const navMenu=document.getElementById("navMenu");
 hamburger.addEventListener("click",()=>navMenu.classList.toggle("active"));
 </script>
+<script>
+const servicesBtn = document.getElementById("servicesBtn");
+const dropdown = document.querySelector(".dropdown");
+
+// Toggle dropdown
+servicesBtn.addEventListener("click", function(e){
+  e.preventDefault();
+  e.stopPropagation();
+  dropdown.classList.toggle("open");
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", function(){
+  dropdown.classList.remove("open");
+});
+
+// Prevent close when clicking inside dropdown
+document.querySelector(".dropdown-content").addEventListener("click", function(e){
+  e.stopPropagation();
+});
+</script>
 
 </body>
 </html>
