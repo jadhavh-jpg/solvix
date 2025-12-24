@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Digital Marketing Services | Solvix</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --dark:#233D4D;
+  --orange:#FE7F2D;
+  --yellow:#FCCA46;
+  --green:#A1C181;
+  --bg:#f8fafc;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --radius:18px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui,sans-serif}
+body{background:var(--bg);color:var(--text);line-height:1.65}
+
+/* HEADER */
+header{
+  padding:22px 8%;
+  border-bottom:1px solid #e5e7eb;
+  display:flex;justify-content:space-between;align-items:center;
+}
+header img{height:44px}
+nav a{
+  margin-left:26px;
+  text-decoration:none;
+  color:var(--dark);
+  font-weight:500;
+}
+nav a:hover{color:var(--orange)}
+
+/* HERO */
+.hero{
+  padding:100px 8%;
+  background:linear-gradient(120deg,var(--dark),var(--orange));
+  color:#fff;
+}
+.hero h1{font-size:48px;margin-bottom:14px}
+.hero p{font-size:18px;opacity:.95}
+
+/* SECTION */
+section{padding:90px 8%}
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+.section-title h2{font-size:36px;margin-bottom:10px}
+.section-title p{color:var(--muted)}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
+
+/* CARDS */
+.card{
+  background:#fff;
+  padding:34px;
+  border-radius:var(--radius);
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 45px rgba(254,127,45,.35);
+}
+
+/* CHART */
+.chart-box{
+  background:#fff;
+  padding:40px;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+.bars{
+  display:flex;
+  align-items:flex-end;
+  gap:24px;
+  height:220px;
+}
+.bar{
+  width:60px;
+  background:linear-gradient(180deg,var(--orange),var(--yellow));
+  border-radius:12px 12px 0 0;
+  animation:grow 1.5s ease forwards;
+}
+.bar span{
+  display:block;
+  text-align:center;
+  margin-top:10px;
+  font-weight:600;
+}
+@keyframes grow{
+  from{height:0}
+  to{height:var(--h)}
+}
+
+/* PRICING */
+.price{
+  font-size:36px;
+  color:var(--orange);
+  margin:10px 0;
+}
+.badge{
+  display:inline-block;
+  background:var(--green);
+  color:#000;
+  font-weight:600;
+  padding:6px 14px;
+  border-radius:999px;
+  font-size:13px;
+}
+
+/* CTA */
+.cta{
+  background:linear-gradient(120deg,var(--dark),#1b2f3b);
+  color:#fff;
+  text-align:center;
+  padding:80px 8%;
+}
+.cta a{
+  display:inline-block;
+  margin-top:20px;
+  padding:16px 36px;
+  background:var(--yellow);
+  color:#000;
+  font-weight:700;
+  border-radius:999px;
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+  background:#0f1f29;
+  color:#cbd5e1;
+  padding:40px 8%;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <img src="../solvixl.png" alt="Solvix">
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#services">Services</a>
+    <a href="../gallery.html">Gallery</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Digital Marketing That Brings Leads</h1>
+  <p>We run performance-driven ads that convert views into real enquiries.</p>
+</section>
+
+<!-- WHAT WE DO -->
+<section>
+  <div class="section-title">
+    <h2>What We Do in Digital Marketing</h2>
+    <p>Focused on leads, not likes</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Google Ads</h3>
+      <p>Search & display ads targeting high-intent customers.</p>
+    </div>
+    <div class="card">
+      <h3>Facebook / Instagram Ads</h3>
+      <p>Lead generation campaigns with optimized creatives.</p>
+    </div>
+    <div class="card">
+      <h3>Landing Page Optimization</h3>
+      <p>High-conversion pages to turn clicks into enquiries.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LEADS CHART -->
+<section>
+  <div class="section-title">
+    <h2>Demo Leads Performance</h2>
+    <p>Example of how ads generate consistent leads</p>
+  </div>
+
+  <div class="chart-box">
+    <div class="bars">
+      <div class="bar" style="--h:80%"><span>Week 1</span></div>
+      <div class="bar" style="--h:120%"><span>Week 2</span></div>
+      <div class="bar" style="--h:170%"><span>Week 3</span></div>
+      <div class="bar" style="--h:210%"><span>Week 4</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <div class="section-title">
+    <h2>Simple & Honest Pricing</h2>
+    <p>50% lower than typical market agencies</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <span class="badge">Starter</span>
+      <h3>Local Business Ads</h3>
+      <div class="price">₹7,999 / month</div>
+      <p>Google or Meta ads setup + basic optimization.</p>
+    </div>
+
+    <div class="card">
+      <span class="badge">Most Popular</span>
+      <h3>Lead Generation Plan</h3>
+      <div class="price">₹14,999 / month</div>
+      <p>Ads + landing page + lead tracking.</p>
+    </div>
+
+    <div class="card">
+      <span class="badge">Growth</span>
+      <h3>Performance Marketing</h3>
+      <div class="price">₹24,999 / month</div>
+      <p>Full funnel ads + reporting + optimization.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Want Leads for Your Business?</h2>
+  <p>Let Solvix run ads that actually convert.</p>
+  <a href="../index.html#contact">Start a Conversation</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 Solvix. Digital Growth Partners.
+</footer>
+
+</body>
+</html>
