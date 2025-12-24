@@ -2,16 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Solvix – Digital Solutions That Work</title>
+<title>Solvix – Digital Solutions</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ================= ROOT ================= */
+/* ================= THEME ================= */
 :root{
   --navy:#0f2a44;
-  --navy-dark:#0b2035;
-  --white:#ffffff;
-  --offwhite:#f5f7fa;
+  --navy-light:#1c3f63;
+  --offwhite:#f8fafc;
+  --card:#ffffff;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --accent:#ff9f1c;
+  --radius:16px;
 }
 
 /* ================= RESET ================= */
@@ -21,155 +25,119 @@
   box-sizing:border-box;
   font-family:Inter,system-ui,-apple-system,sans-serif;
 }
-
+html{scroll-behavior:smooth}
 body{
   background:var(--offwhite);
-  color:#111;
+  color:var(--text);
   line-height:1.6;
 }
 
 /* ================= HEADER ================= */
 header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:16px 8%;
-  background:#fff;
   position:sticky;
   top:0;
   z-index:1000;
+  background:#fff;
+  padding:16px 8%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid #e5e7eb;
 }
-
-header img{
-  height:42px;
-}
+header img{height:90px}
 
 nav ul{
   list-style:none;
   display:flex;
   align-items:center;
-  gap:28px;
+  gap:26px;
 }
-
 nav a{
   text-decoration:none;
-  color:#111;
   font-weight:500;
-  font-size:15px;
+  color:var(--navy);
 }
+nav a:hover{color:var(--accent)}
 
-/* ===== DROPDOWN ===== */
-.dropdown{
-  position:relative;
-}
-
-.dropdown-menu{
-  display:none;
+/* Dropdown */
+.dropdown{position:relative}
+.dropdown-content{
   position:absolute;
-  top:120%;
+  top:130%;
   left:0;
+  min-width:240px;
   background:#fff;
-  min-width:220px;
+  border-radius:12px;
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
   padding:10px 0;
-  border-radius:10px;
-  box-shadow:0 18px 40px rgba(0,0,0,.15);
+  display:none;
 }
-
-.dropdown-menu li{
-  padding:10px 18px;
-}
-
-.dropdown-menu li a{
-  color:#111;
-  font-size:14px;
-}
-
-.dropdown:hover .dropdown-menu{
+.dropdown-content a{
   display:block;
+  padding:12px 18px;
 }
+.dropdown-content a:hover{
+  background:#f1f5f9;
+}
+.dropdown.open .dropdown-content{display:block}
 
 /* ================= HERO ================= */
 .hero{
-  min-height:90vh;
+  min-height:92vh;
   display:flex;
   align-items:center;
   padding:0 8%;
-  background:linear-gradient(
-    -45deg,
-    #0f2a44,
-    #12395c,
-    #1b4d7a,
-    #0f2a44
-  );
-  background-size:400% 400%;
-  animation:gradientMove 12s ease infinite;
-}
-
-@keyframes gradientMove{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-
-.hero-content{
-  max-width:650px;
+  background:
+    linear-gradient(120deg,var(--navy),var(--navy-light));
   color:#fff;
 }
-
+.hero-content{max-width:640px}
 .hero h1{
-  font-size:52px;
+  font-size:56px;
   line-height:1.1;
   margin-bottom:18px;
 }
-
 .hero p{
   font-size:18px;
-  opacity:.9;
-  margin-bottom:32px;
+  opacity:.95;
+  margin-bottom:34px;
 }
-
 .hero-actions{
   display:flex;
-  gap:16px;
+  gap:18px;
 }
-
 .btn{
-  padding:14px 30px;
+  padding:14px 32px;
   border-radius:999px;
   font-weight:600;
-  font-size:15px;
   text-decoration:none;
-  transition:.3s;
 }
-
-.btn.primary{
+.btn-primary{
+  background:#fff;
+  color:var(--navy);
+}
+.btn-primary:hover{background:#e5e7eb}
+.btn-outline{
+  border:2px solid #fff;
+  color:#fff;
+}
+.btn-outline:hover{
   background:#fff;
   color:var(--navy);
 }
 
-.btn.outline{
-  border:2px solid #fff;
-  color:#fff;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-}
-
-/* ================= SECTIONS ================= */
-section{
-  padding:90px 8%;
-}
-
+/* ================= SECTION ================= */
+section{padding:90px 8%}
 .section-title{
   text-align:center;
   margin-bottom:60px;
 }
-
 .section-title h2{
   font-size:38px;
+  margin-bottom:10px;
   color:var(--navy);
 }
+.section-title p{color:var(--muted)}
 
 /* ================= SERVICES ================= */
 .services{
@@ -177,30 +145,78 @@ section{
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:28px;
 }
-
 .card{
-  background:#fff;
+  background:var(--card);
   padding:34px;
-  border-radius:18px;
+  border-radius:var(--radius);
   transition:.3s;
 }
-
 .card:hover{
   transform:translateY(-6px);
-  box-shadow:0 18px 40px rgba(0,0,0,.12);
+  box-shadow:0 18px 40px rgba(0,0,0,.1);
 }
+.card h3{margin-bottom:10px;color:var(--navy)}
 
 /* ================= EXPERIENCE ================= */
 .stats{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:28px;
+  gap:26px;
+}
+.stat{
+  background:var(--navy);
+  color:#fff;
+  padding:42px;
+  border-radius:var(--radius);
   text-align:center;
 }
-
 .stat h3{
-  font-size:42px;
+  font-size:36px;
+  margin-bottom:6px;
+}
+
+/* ================= GALLERY ================= */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:22px;
+}
+.gallery .item{
+  height:180px;
+  background:#e5e7eb;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+  transition:.3s;
+}
+.gallery .item:hover{
+  transform:translateY(-5px);
+  box-shadow:0 16px 36px rgba(0,0,0,.12);
+}
+
+/* ================= PRICING ================= */
+.pricing{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
+.price-card{
+  background:#fff;
+  padding:36px;
+  border-radius:var(--radius);
+  text-align:center;
+  transition:.3s;
+}
+.price-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+.price{
+  font-size:32px;
   color:var(--navy);
+  margin:14px 0;
 }
 
 /* ================= CTA ================= */
@@ -208,114 +224,80 @@ section{
   background:var(--navy);
   color:#fff;
   text-align:center;
-  padding:80px 8%;
 }
-
-.cta h2{
-  font-size:34px;
-  margin-bottom:20px;
-}
+.cta h2{font-size:34px;margin-bottom:14px}
 
 /* ================= FOOTER ================= */
 footer{
-  background:var(--navy-dark);
+  background:#0b1d2d;
   color:#cbd5e1;
   padding:70px 8% 30px;
 }
-
 .footer-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:40px;
 }
-
-footer h4{
-  color:#fff;
-  margin-bottom:16px;
-}
-
 footer a{
   display:block;
   color:#cbd5e1;
   text-decoration:none;
   margin-bottom:8px;
-  font-size:14px;
 }
-
+footer a:hover{color:#fff}
 .footer-bottom{
-  border-top:1px solid rgba(255,255,255,.1);
   margin-top:40px;
+  border-top:1px solid #1e293b;
   padding-top:20px;
   text-align:center;
   font-size:13px;
 }
 
+/* ================= ANIMATION ================= */
+.fade{
+  animation:fadeUp .7s ease both;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:none}
+}
+
 /* ================= MOBILE ================= */
 @media(max-width:768px){
-
-  header{
-    padding:14px 6%;
-  }
-
-  nav ul{
-    gap:18px;
-  }
-
-  header img{
-    height:34px;
-  }
-
-  .hero{
-    padding:0 6%;
-  }
-
-  .hero h1{
-    font-size:34px;
-  }
-
-  .hero p{
-    font-size:16px;
-  }
-
-  .hero-actions{
-    flex-direction:column;
-  }
-
-  .btn{
-    width:100%;
-    text-align:center;
-  }
+  .hero h1{font-size:40px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 <header>
-  <img src="logodp.jpg" alt="Solvix Logo">
-
+  <img src="logodp.jpg" alt="Solvix">
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="#home">Home</a></li>
 
-      <li class="dropdown">
-        <a href="#">Services ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="services/website-development.html">Website Development</a></li>
-          <li><a href="services/digital-marketing.html">Digital Marketing</a></li>
-          <li><a href="services/design-video.html">Design & Video</a></li>
-        </ul>
+      <li class="dropdown" id="servicesDropdown">
+        <a href="#" id="servicesBtn">Services ▾</a>
+        <div class="dropdown-content">
+          <a href="services/website-development.html">Website Development</a>
+          <a href="services/digital-marketing.html">Digital Marketing</a>
+          <a href="services/motion-ads-video.html">Motion Ads & Video</a>
+          <a href="services/graphic-design.html">Graphic Design</a>
+          <a href="services/logo-brand-design.html">Logo & Branding</a>
+          <a href="services/ui-ux-design.html">UI / UX Design</a>
+        </div>
       </li>
 
-      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="hero">
+<!-- HERO -->
+<section class="hero fade" id="home">
   <div class="hero-content">
     <h1>Digital solutions<br>built for real growth</h1>
     <p>
@@ -323,29 +305,34 @@ footer a{
       that help businesses grow with clarity and confidence.
     </p>
     <div class="hero-actions">
-      <a href="#contact" class="btn primary">Get Started</a>
-      <a href="#services" class="btn outline">View Services</a>
+      <a href="#contact" class="btn btn-primary">Get Started</a>
+      <a href="#services" class="btn btn-outline">View Services</a>
     </div>
   </div>
 </section>
 
-<!-- ================= SERVICES ================= -->
-<section id="services">
+<!-- SERVICES -->
+<section id="services" class="fade">
   <div class="section-title">
     <h2>Our Services</h2>
+    <p>Professional solutions, clearly delivered</p>
   </div>
 
   <div class="services">
-    <div class="card">Website Development</div>
-    <div class="card">Digital Marketing</div>
-    <div class="card">Design & Motion Video</div>
-    <div class="card">Brand Identity</div>
-    <div class="card">UI / UX Design</div>
+    <div class="card"><h3>Website Development</h3><p>Fast, reliable, business-ready websites.</p></div>
+    <div class="card"><h3>Digital Marketing</h3><p>Ads & strategies focused on leads.</p></div>
+    <div class="card"><h3>Motion Ads & Video</h3><p>Videos that explain and convert.</p></div>
+    <div class="card"><h3>Graphic Design</h3><p>Posters, creatives & brand visuals.</p></div>
+    <div class="card"><h3>Logo & Branding</h3><p>Identity systems built for trust.</p></div>
+    <div class="card"><h3>UI / UX Design</h3><p>User-first digital experiences.</p></div>
   </div>
 </section>
 
-<!-- ================= EXPERIENCE ================= -->
-<section>
+<!-- EXPERIENCE -->
+<section class="fade">
+  <div class="section-title">
+    <h2>Our Experience</h2>
+  </div>
   <div class="stats">
     <div class="stat"><h3>50+</h3><p>Projects Delivered</p></div>
     <div class="stat"><h3>20+</h3><p>Brands Served</p></div>
@@ -353,31 +340,74 @@ footer a{
   </div>
 </section>
 
-<!-- ================= CTA ================= -->
-<section class="cta">
-  <h2>Let’s work together</h2>
-  <a href="#contact" class="btn primary">Contact Solvix</a>
+<!-- GALLERY -->
+<section id="gallery" class="fade">
+  <div class="section-title">
+    <h2>Our Work</h2>
+    <p>Graphics • Logos • Motion Ads</p>
+  </div>
+
+  <div class="gallery">
+    <div class="item">Graphic Design</div>
+    <div class="item">Logo Design</div>
+    <div class="item">Motion Ad</div>
+    <div class="item">Poster</div>
+    <div class="item">Branding</div>
+    <div class="item">UI Design</div>
+  </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- PRICING -->
+<section class="fade">
+  <div class="section-title">
+    <h2>Pricing</h2>
+    <p>Simple & honest plans</p>
+  </div>
+
+  <div class="pricing">
+    <div class="price-card">
+      <h3>Starter</h3>
+      <div class="price">₹7,999</div>
+      <p>Best for small businesses</p>
+    </div>
+    <div class="price-card">
+      <h3>Growth</h3>
+      <div class="price">₹14,999</div>
+      <p>Lead generation focused</p>
+    </div>
+    <div class="price-card">
+      <h3>Pro</h3>
+      <div class="price">₹24,999</div>
+      <p>Complete digital system</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta fade">
+  <h2>Let’s work together</h2>
+  <p>Tell us about your project</p>
+  <a href="#contact" class="btn btn-primary">Contact Solvix</a>
+</section>
+
+<!-- FOOTER -->
 <footer id="contact">
   <div class="footer-grid">
     <div>
       <h4>Solvix</h4>
       <p>Digital solutions that work.</p>
     </div>
-
     <div>
       <h4>Services</h4>
-      <a href="#">Website Development</a>
-      <a href="#">Digital Marketing</a>
-      <a href="#">Design & Video</a>
+      <a href="#services">Website Development</a>
+      <a href="#services">Digital Marketing</a>
+      <a href="#services">Design & Video</a>
     </div>
-
     <div>
       <h4>Contact</h4>
-      <p>📞 8821967313</p>
-      <p>📧 jadhavh@gmail.com</p>
+      <a href="tel:8821967313">📞 8821967313</a>
+      <a href="mailto:jadhav,h@gmail.com">📧 jadhav,h@gmail.com</a>
+      <p>Pune, India</p>
     </div>
   </div>
 
@@ -385,6 +415,18 @@ footer a{
     © 2025 Solvix. All rights reserved.
   </div>
 </footer>
+
+<script>
+const servicesBtn=document.getElementById("servicesBtn");
+const dropdown=document.getElementById("servicesDropdown");
+
+servicesBtn.addEventListener("click",e=>{
+  e.preventDefault();
+  e.stopPropagation();
+  dropdown.classList.toggle("open");
+});
+document.addEventListener("click",()=>dropdown.classList.remove("open"));
+</script>
 
 </body>
 </html>
