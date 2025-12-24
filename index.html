@@ -75,30 +75,32 @@ body{
 }
 
 /* ================= HEADER ================= */
-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:22px 8%;
-  background:#fff;
-  border-bottom:1px solid rgba(35,61,77,.12);
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
+<header class="site-header">
+  <div class="logo">
+    <img src="logo.png" alt="Solvix">
+  </div>
 
-header img{height:46px}
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
 
-.nav a,.dropbtn{
-  text-decoration:none;
-  font-size:15.5px;
-  font-weight:500;
-  color:var(--dark);
-  background:none;
-  border:none;
-  cursor:pointer;
-  position:relative;
-}
+      <li class="dropdown" id="servicesDropdown">
+        <a href="#" id="servicesBtn">Services ▾</a>
+
+        <div class="dropdown-content">
+          <a href="services/website-development.html">Website Development</a>
+          <a href="services/digital-marketing.html">Digital Marketing</a>
+          <a href="services/motion-ads.html">Motion Ads & Video</a>
+          <a href="services/graphic-design.html">Graphic Design</a>
+          <a href="services/ui-ux.html">UI / UX Design</a>
+        </div>
+      </li>
+
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
 <nav>
   <ul>
@@ -391,7 +393,68 @@ footer a:hover{
     box-shadow:none;
   }
   .hero h1{font-size:40px}
+}<style>
+.site-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 8%;
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
+
+.logo img{
+  height:40px;
+}
+
+.main-nav ul{
+  list-style:none;
+  display:flex;
+  gap:28px;
+  align-items:center;
+}
+
+.main-nav a{
+  text-decoration:none;
+  color:#233D4D;
+  font-weight:500;
+}
+
+/* Dropdown */
+.dropdown{
+  position:relative;
+}
+
+.dropdown-content{
+  position:absolute;
+  top:130%;
+  left:0;
+  min-width:260px;
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+  padding:10px 0;
+  display:none;
+}
+
+.dropdown-content a{
+  display:block;
+  padding:12px 18px;
+  color:#233D4D;
+}
+
+.dropdown-content a:hover{
+  background:#FCCA46;
+}
+
+/* Open state */
+.dropdown.open .dropdown-content{
+  display:block;
+}
+</style>
+
 </style>
 </head>
 
