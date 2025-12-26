@@ -82,30 +82,23 @@ nav a:hover{color:var(--accent)}
 .dropdown.open .dropdown-content{display:block}
 
 /* ================= HERO ================= */
-.hero{
-  min-height:92vh;
-  display:flex;
-  align-items:center;
-  padding:0 8%;
-  background:
-    linear-gradient(120deg,var(--navy),var(--navy-light));
-  color:#fff;
-}
-.hero-content{max-width:640px}
-.hero h1{
-  font-size:56px;
-  line-height:1.1;
-  margin-bottom:18px;
-}
-.hero p{
-  font-size:18px;
-  opacity:.95;
-  margin-bottom:34px;
-}
-.hero-actions{
-  display:flex;
-  gap:18px;
-}
+<section class="hero fade" id="home">
+  <div class="hero-content">
+    <h1>Digital solutions built for real growth</h1>
+    <p>We design websites, marketing systems...</p>
+
+    <div class="hero-actions">
+      <a href="#contact" class="btn primary">Get Started</a>
+      <a href="#services" class="btn outline">View Services</a>
+    </div>
+  </div>
+
+  <!-- 👇 HERO IMAGE -->
+  <div class="hero-image">
+    <img src="sol.png" alt="Solvix Digital Solutions">
+  </div>
+</section>
+
 .btn{
   padding:14px 32px;
   border-radius:999px;
