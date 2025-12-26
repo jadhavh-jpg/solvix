@@ -8,15 +8,14 @@
 <style>
 :root{
   --navy:#0f2a44;
-  --navy-dark:#091e33;
-  --offwhite:#f5f8fc;
-  --accent:#1f9cff;
+  --navy-dark:#081a2d;
+  --off:#f5f8fc;
+  --accent:#2da8ff;
 }
-
-*{box-sizing:border-box;margin:0;padding:0}
+*{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:Inter,Arial,sans-serif;
-  background:var(--offwhite);
+  background:var(--off);
   color:#0f2a44;
 }
 
@@ -25,9 +24,9 @@ header{
   background:#fff;
   padding:14px 40px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  box-shadow:0 4px 20px rgba(0,0,0,.05);
+  align-items:center;
+  box-shadow:0 6px 20px rgba(0,0,0,.06);
 }
 header img{height:38px}
 nav a{
@@ -44,34 +43,37 @@ nav a:hover{color:var(--accent)}
   color:#fff;
   padding:90px 40px;
 }
-.hero h1{
-  font-size:48px;
-  max-width:720px;
-}
-.hero p{
-  margin-top:14px;
-  max-width:640px;
-  opacity:.9;
-}
+.hero h1{font-size:48px;max-width:700px}
+.hero p{margin-top:14px;max-width:620px;opacity:.9}
 
-/* ===== SECTION ===== */
-.section{
-  padding:70px 40px;
+/* ===== FILTER ===== */
+.filters{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  margin:50px 0 30px;
+  flex-wrap:wrap;
 }
-.section h2{
-  font-size:34px;
-  margin-bottom:10px;
+.filters button{
+  padding:10px 22px;
+  border-radius:999px;
+  border:1.5px solid var(--navy);
+  background:#fff;
+  cursor:pointer;
+  font-weight:600;
 }
-.section p{
-  opacity:.7;
-  margin-bottom:30px;
+.filters button.active,
+.filters button:hover{
+  background:var(--navy);
+  color:#fff;
 }
 
 /* ===== GRID ===== */
+.section{padding:0 40px 80px}
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:22px;
+  gap:24px;
 }
 
 /* ===== CARD ===== */
@@ -79,27 +81,49 @@ nav a:hover{color:var(--accent)}
   background:#fff;
   border-radius:18px;
   overflow:hidden;
-  box-shadow:0 20px 40px rgba(0,0,0,.08);
+  box-shadow:0 18px 40px rgba(0,0,0,.08);
   transition:.35s;
+  cursor:pointer;
+  opacity:0;
+  transform:translateY(30px);
 }
-.card:hover{
-  transform:translateY(-8px);
+.card.show{
+  opacity:1;
+  transform:none;
 }
-.card img,
-.card video{
+.card:hover{transform:translateY(-8px)}
+.card img, .card video{
   width:100%;
   height:220px;
   object-fit:cover;
 }
-.card .info{
-  padding:16px;
+.card .info{padding:16px}
+.card h4{font-size:18px}
+.card span{font-size:13px;opacity:.6}
+
+/* ===== LIGHTBOX ===== */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
 }
-.card .info h4{
-  font-size:18px;
+.lightbox.active{display:flex}
+.lightbox img,.lightbox video{
+  max-width:90%;
+  max-height:85%;
+  border-radius:14px;
 }
-.card .info span{
-  font-size:13px;
-  opacity:.6;
+.lightbox span{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:36px;
+  color:#fff;
+  cursor:pointer;
 }
 
 /* ===== FOOTER ===== */
@@ -121,7 +145,6 @@ footer{
 
 <body>
 
-<!-- ===== HEADER ===== -->
 <header>
   <img src="logodp.jpg" alt="Solvix">
   <nav>
@@ -132,88 +155,86 @@ footer{
   </nav>
 </header>
 
-<!-- ===== HERO ===== -->
 <section class="hero">
-  <h1>Our Creative Work Gallery</h1>
-  <p>Posters, video ads and motion creatives designed to help brands grow with confidence.</p>
+  <h1>Our Creative Gallery</h1>
+  <p>Image posters, video ads & motion creatives crafted for real brand growth.</p>
 </section>
 
-<!-- ===== IMAGE POSTERS ===== -->
-<section class="section">
-  <h2>Image Posters</h2>
-  <p>High-quality static creatives for branding & promotions</p>
+<div class="filters">
+  <button class="active" onclick="filterItems('all')">All</button>
+  <button onclick="filterItems('image')">Image Posters</button>
+  <button onclick="filterItems('video')">Video Ads</button>
+  <button onclick="filterItems('motion')">Motion Ads</button>
+</div>
 
+<section class="section">
   <div class="grid">
-    <div class="card">
+
+    <!-- IMAGE -->
+    <div class="card image" onclick="openLightbox('gallery/poster1.jpg')">
       <img src="gallery/poster1.jpg">
-      <div class="info">
-        <h4>Brand Poster</h4>
-        <span>Image Creative</span>
-      </div>
+      <div class="info"><h4>Brand Poster</h4><span>Image</span></div>
     </div>
 
-    <div class="card">
+    <div class="card image" onclick="openLightbox('gallery/poster2.jpg')">
       <img src="gallery/poster2.jpg">
-      <div class="info">
-        <h4>Festival Poster</h4>
-        <span>Image Creative</span>
-      </div>
+      <div class="info"><h4>Festival Creative</h4><span>Image</span></div>
     </div>
+
+    <!-- VIDEO -->
+    <div class="card video" onclick="openLightbox('gallery/video1.mp4',true)">
+      <video src="gallery/video1.mp4"></video>
+      <div class="info"><h4>Product Ad</h4><span>Video</span></div>
+    </div>
+
+    <!-- MOTION -->
+    <div class="card motion" onclick="openLightbox('gallery/motion1.mp4',true)">
+      <video src="gallery/motion1.mp4" muted autoplay loop></video>
+      <div class="info"><h4>Motion Graphic</h4><span>Motion</span></div>
+    </div>
+
   </div>
 </section>
 
-<!-- ===== VIDEO ADS ===== -->
-<section class="section">
-  <h2>Video Advertisements</h2>
-  <p>Short & engaging video ads for social media</p>
-
-  <div class="grid">
-    <div class="card">
-      <video src="gallery/video1.mp4" controls></video>
-      <div class="info">
-        <h4>Product Ad</h4>
-        <span>Video Ad</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <video src="gallery/video2.mp4" controls></video>
-      <div class="info">
-        <h4>Service Promo</h4>
-        <span>Video Ad</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== MOTION / ANIMATION ===== -->
-<section class="section">
-  <h2>Motion & Animated Ads</h2>
-  <p>Dynamic motion graphics & animations</p>
-
-  <div class="grid">
-    <div class="card">
-      <video src="gallery/motion1.mp4" autoplay muted loop></video>
-      <div class="info">
-        <h4>Motion Graphic</h4>
-        <span>Animated Ad</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <video src="gallery/motion2.mp4" autoplay muted loop></video>
-      <div class="info">
-        <h4>Reel Animation</h4>
-        <span>Animated Ad</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
 <footer>
-  © 2026 Solvix. Digital solutions built for real growth.
+© 2026 Solvix — Digital solutions built for real growth
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span onclick="closeLightbox()">×</span>
+</div>
+
+<script>
+const cards=document.querySelectorAll('.card');
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting)e.target.classList.add('show');
+  });
+},{threshold:.2});
+cards.forEach(c=>observer.observe(c));
+
+function filterItems(type){
+  document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  cards.forEach(card=>{
+    card.style.display=(type==='all'||card.classList.contains(type))?'block':'none';
+  });
+}
+
+function openLightbox(src,isVideo=false){
+  const lb=document.getElementById('lightbox');
+  lb.innerHTML='<span onclick="closeLightbox()">×</span>';
+  lb.innerHTML+=isVideo
+    ? `<video src="${src}" controls autoplay></video>`
+    : `<img src="${src}">`;
+  lb.classList.add('active');
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('active');
+}
+</script>
 
 </body>
 </html>
