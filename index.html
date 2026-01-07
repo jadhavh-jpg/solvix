@@ -9,8 +9,8 @@
 
 <style>
 :root{
-  --bg:#FBFAF7;
-  --panel:#ffffff;
+  --bg:#FBFAF7;        /* cream */
+  --panel:#FFFFFF;
   --text:#1e293b;
   --muted:#64748b;
   --accent:#4f46e5;
@@ -22,15 +22,24 @@ body{background:var(--bg);color:var(--text);overflow-x:hidden}
 
 /* ===== NAV ===== */
 nav{
-  position:fixed;top:0;left:0;right:0;
+  position:fixed;
+  top:0;left:0;right:0;
   padding:18px 8%;
-  display:flex;justify-content:space-between;align-items:center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   background:rgba(251,250,247,.95);
+  backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border);
   z-index:999;
 }
 nav img{height:34px}
-nav a{margin-left:28px;text-decoration:none;font-weight:600;color:var(--text)}
+nav a{
+  margin-left:28px;
+  text-decoration:none;
+  font-weight:600;
+  color:var(--text);
+}
 
 /* ===== HERO ===== */
 .hero{
@@ -53,18 +62,35 @@ nav a{margin-left:28px;text-decoration:none;font-weight:600;color:var(--text)}
   color:var(--muted);
   max-width:520px;
 }
-.hero img{max-width:520px;width:100%}
-.cta{margin-top:38px;display:flex;gap:20px}
+.hero .cta{
+  margin-top:38px;
+  display:flex;
+  gap:20px;
+}
 .btn{
   padding:16px 34px;
   border-radius:999px;
   font-weight:800;
   text-decoration:none;
-  border:none;
-  cursor:pointer;
 }
 .btn.primary{background:var(--accent);color:#fff}
-.btn.outline{border:2px solid var(--accent);color:var(--accent);background:none}
+.btn.outline{
+  border:2px solid var(--accent);
+  color:var(--accent);
+}
+.hero img{
+  width:100%;
+  max-width:520px;
+}
+
+/* ===== STATEMENT ===== */
+.statement{
+  padding:140px 8%;
+  font-size:56px;
+  font-weight:900;
+  line-height:1.1;
+}
+.statement span{color:var(--accent)}
 
 /* ===== SERVICES ===== */
 .services{
@@ -74,94 +100,108 @@ nav a{margin-left:28px;text-decoration:none;font-weight:600;color:var(--text)}
   gap:30px;
 }
 .service{
-  background:#fff;
+  background:var(--panel);
   padding:40px;
   border-radius:26px;
   border:1px solid var(--border);
 }
+.service h3{font-size:24px;font-weight:800}
+.service p{margin-top:12px;color:var(--muted)}
 
-/* ===== CONTACT + ABOUT ===== */
-.contact-about{
+/* ===== OUR CLIENTS ===== */
+.clients{
   padding:120px 8%;
+  text-align:center;
 }
-.contact-wrap{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-}
-
-.contact-form-box,
-.about-box{
-  background:#fff;
-  padding:40px;
-  border-radius:26px;
-  border:1px solid var(--border);
-}
-
-/* FORM */
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
-input,textarea{
-  width:100%;
-  padding:14px;
-  border-radius:12px;
-  border:1px solid var(--border);
-}
-textarea{
-  margin-top:16px;
-  min-height:120px;
-  resize:none;
-}
-.contact-form-box button{
-  margin-top:20px;
-  width:100%;
-}
-
-/* ABOUT */
-.about-box img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:18px;
-}
-.about-box h3{
-  margin-top:20px;
-  font-size:28px;
+.clients h2{
+  font-size:42px;
   font-weight:900;
 }
-.about-box p{
+.clients p{
   margin-top:10px;
   color:var(--muted);
 }
-.about-box ul{
-  margin-top:14px;
-  padding-left:18px;
+.client-grid{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:30px;
 }
-.about-box li{
-  margin-bottom:8px;
+.client{
+  background:#fff;
+  padding:28px;
+  border-radius:18px;
+  border:1px solid var(--border);
+  font-weight:700;
+  color:#334155;
 }
 
-/* ===== FOOTER ===== */
+/* ===== PROCESS ===== */
+.process{
+  padding:140px 8%;
+}
+.step{
+  display:flex;
+  gap:40px;
+  margin-bottom:120px;
+}
+.step-number{
+  font-size:72px;
+  font-weight:900;
+  color:#e2e8f0;
+}
+.step h3{
+  font-size:38px;
+  font-weight:900;
+}
+.step p{
+  margin-top:10px;
+  max-width:480px;
+  color:var(--muted);
+}
+
+/* ===== CTA ===== */
+.final-cta{
+  padding:140px 8%;
+  text-align:center;
+  background:#ffffff;
+  border-top:1px solid var(--border);
+}
+.final-cta h2{
+  font-size:54px;
+  font-weight:900;
+}
+.final-cta p{
+  margin-top:14px;
+  color:var(--muted);
+}
+.final-cta a{
+  display:inline-block;
+  margin-top:36px;
+}
+
+/* ===== FOOTER (SINGLE LIGHT) ===== */
 footer{
   background:#FBFAF7;
   border-top:1px solid var(--border);
   padding:60px 8% 30px;
   text-align:center;
+}
+footer p{
+  font-size:14px;
   color:var(--muted);
 }
+footer strong{color:var(--text)}
 
-/* ===== WHATSAPP FLOAT ===== */
+/* ===== WHATSAPP ===== */
 .whatsapp{
   position:fixed;
   right:20px;
   bottom:20px;
-  width:54px;
-  height:54px;
   background:#25D366;
   color:#fff;
+  width:54px;
+  height:54px;
   border-radius:50%;
   display:flex;
   align-items:center;
@@ -174,8 +214,10 @@ footer{
 /* ===== MOBILE ===== */
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;text-align:center}
-  .contact-wrap{grid-template-columns:1fr}
-  .form-grid{grid-template-columns:1fr}
+  .hero h1{font-size:44px}
+  .statement{font-size:36px}
+  .step{flex-direction:column}
+  .hero .cta{justify-content:center}
 }
 </style>
 </head>
@@ -196,93 +238,106 @@ footer{
 <!-- HERO -->
 <section class="hero">
   <div>
-    <h1>Branding & <span>UI/UX</span><br>That Makes Brands Matter</h1>
-    <p>Clean, premium digital identities and experiences.</p>
+    <h1>
+      Branding & <span>UI/UX</span><br>
+      That Makes Brands Matter
+    </h1>
+    <p>
+      We craft clean, premium digital identities and experiences
+      that people trust, remember and choose.
+    </p>
     <div class="cta">
-      <a href="#contact" class="btn primary">Start Project</a>
+      <a href="#" class="btn primary">Start a Project</a>
       <a href="#" class="btn outline">View Work</a>
     </div>
   </div>
+
   <img src="ooo.jpg" alt="Branding UI UX">
+</section>
+
+<!-- STATEMENT -->
+<section class="statement">
+  Clean design.<br>
+  Clear thinking.<br>
+  <span>Serious growth.</span>
 </section>
 
 <!-- SERVICES -->
 <section class="services">
-  <div class="service">Brand Identity</div>
-  <div class="service">UI / UX Design</div>
-  <div class="service">Web Experience</div>
-  <div class="service">Digital Growth</div>
-</section>
-
-<!-- CONTACT + ABOUT -->
-<section class="contact-about" id="contact">
-  <div class="contact-wrap">
-
-    <!-- CONTACT -->
-    <div class="contact-form-box">
-      <h2>Contact Us</h2>
-      <p class="muted">Tell us about your project</p>
-
-      <form onsubmit="sendWhatsApp(event)">
-        <div class="form-grid">
-          <input id="name" placeholder="Your Name" required>
-          <input id="phone" placeholder="Phone Number" required>
-        </div>
-        <input id="email" placeholder="Email Address" required style="margin-top:16px">
-        <textarea id="message" placeholder="Your Requirement" required></textarea>
-        <button type="submit" class="btn primary">Send on WhatsApp</button>
-      </form>
-    </div>
-
-    <!-- ABOUT -->
-    <div class="about-box">
-      <img src="ooo.jpg" alt="About Solvix">
-      <h3>About Solvix</h3>
-      <p>
-        Solvix is a branding & UI/UX focused digital studio helping
-        businesses build clean, premium and growth-ready digital identities.
-      </p>
-      <ul>
-        <li>Branding & Identity Systems</li>
-        <li>UI / UX & Web Experiences</li>
-        <li>SEO-ready, performance-focused builds</li>
-      </ul>
-    </div>
-
+  <div class="service">
+    <h3>Brand Identity</h3>
+    <p>Logos, color systems and brand guidelines.</p>
+  </div>
+  <div class="service">
+    <h3>UI / UX Design</h3>
+    <p>Human-centered interfaces with clarity.</p>
+  </div>
+  <div class="service">
+    <h3>Web Experience</h3>
+    <p>Fast, SEO-ready and scalable websites.</p>
+  </div>
+  <div class="service">
+    <h3>Digital Growth</h3>
+    <p>SEO, marketing and performance strategy.</p>
   </div>
 </section>
 
+<!-- OUR CLIENTS -->
+<section class="clients">
+  <h2>Our Clients</h2>
+  <p>Brands who trust Solvix</p>
+
+  <div class="client-grid">
+    <div class="client">Client One</div>
+    <div class="client">Client Two</div>
+    <div class="client">Client Three</div>
+    <div class="client">Client Four</div>
+    <div class="client">Client Five</div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="step">
+    <div class="step-number">01</div>
+    <div>
+      <h3>Understand</h3>
+      <p>Your brand, market and users deeply.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-number">02</div>
+    <div>
+      <h3>Design</h3>
+      <p>Visual systems and UX that feel right.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-number">03</div>
+    <div>
+      <h3>Grow</h3>
+      <p>Launch, optimize and scale with intent.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="final-cta">
+  <h2>Let’s Build Something Meaningful</h2>
+  <p>Ready when you are.</p>
+  <a href="#contact" class="btn primary">Contact Solvix</a>
+</section>
+
 <!-- FOOTER -->
-<footer>
+<footer id="contact">
   <p><strong>Solvix</strong> — Branding & Digital Growth Studio</p>
   <p>📞 9300594567 · 📧 jadhav.h@gmail.com · Pune, India</p>
-  <p style="margin-top:10px;">© 2026 Solvix. All rights reserved.</p>
+  <p style="margin-top:12px;">© 2026 Solvix. All rights reserved.</p>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/919300594567" target="_blank">💬</a>
-
-<!-- ===== WHATSAPP SUBMIT JS ===== -->
-<script>
-function sendWhatsApp(e){
-  e.preventDefault();
-
-  const name = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-
-  const text =
-    "New Website Inquiry%0A%0A" +
-    "Name: " + name + "%0A" +
-    "Phone: " + phone + "%0A" +
-    "Email: " + email + "%0A%0A" +
-    "Message:%0A" + message;
-
-  const url = "https://wa.me/919300594567?text=" + text;
-  window.open(url, "_blank");
-}
-</script>
 
 </body>
 </html>
