@@ -219,6 +219,69 @@ footer strong{color:var(--text)}
   .step{flex-direction:column}
   .hero .cta{justify-content:center}
 }
+  /* ===== CONTACT + ABOUT ===== */
+.contact-about{
+  padding:120px 8%;
+}
+.contact-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.contact-form-box,
+.about-box{
+  background:#fff;
+  padding:40px;
+  border-radius:26px;
+  border:1px solid var(--border);
+}
+
+/* FORM */
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+input,textarea{
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+textarea{
+  margin-top:16px;
+  min-height:120px;
+  resize:none;
+}
+.contact-form-box button{
+  margin-top:20px;
+  width:100%;
+}
+
+/* ABOUT */
+.about-box img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:18px;
+}
+.about-box h3{
+  margin-top:20px;
+  font-size:28px;
+  font-weight:900;
+}
+.about-box p{
+  margin-top:10px;
+  color:var(--muted);
+}
+.about-box ul{
+  margin-top:14px;
+  padding-left:18px;
+}
+.about-box li{
+  margin-bottom:8px;
+}
 </style>
 </head>
 
@@ -329,7 +392,27 @@ footer strong{color:var(--text)}
   <p>Ready when you are.</p>
   <a href="#contact" class="btn primary">Contact Solvix</a>
 </section>
+</section>
 
+<!-- CONTACT + ABOUT -->
+<section class="contact-about" id="contact">
+  <div class="contact-wrap">
+
+    <!-- CONTACT -->
+    <div class="contact-form-box">
+      <h2>Contact Us</h2>
+      <p class="muted">Tell us about your project</p>
+
+      <form onsubmit="sendWhatsApp(event)">
+        <div class="form-grid">
+          <input id="name" placeholder="Your Name" required>
+          <input id="phone" placeholder="Phone Number" required>
+        </div>
+        <input id="email" placeholder="Email Address" required style="margin-top:16px">
+        <textarea id="message" placeholder="Your Requirement" required></textarea>
+        <button type="submit" class="btn primary">Send on WhatsApp</button>
+      </form>
+    </div>
 <!-- FOOTER -->
 <footer id="contact">
   <p><strong>Solvix</strong> — Branding & Digital Growth Studio</p>
@@ -338,6 +421,27 @@ footer strong{color:var(--text)}
 </footer>
 
 <a class="whatsapp" href="https://wa.me/919300594567" target="_blank">💬</a>
+<script>
+function sendWhatsApp(e){
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  const text =
+    "New Website Inquiry%0A%0A" +
+    "Name: " + name + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Email: " + email + "%0A%0A" +
+    "Message:%0A" + message;
+
+  const url = "https://wa.me/919300594567?text=" + text;
+  window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
+
