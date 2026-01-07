@@ -398,11 +398,8 @@ textarea{
 <section class="contact-about" id="contact">
   <div class="contact-wrap">
 
-    <!-- CONTACT -->
     <div class="contact-form-box">
       <h2>Contact Us</h2>
-      <p class="muted">Tell us about your project</p>
-
       <form onsubmit="sendWhatsApp(event)">
         <div class="form-grid">
           <input id="name" placeholder="Your Name" required>
@@ -410,39 +407,46 @@ textarea{
         </div>
         <input id="email" placeholder="Email Address" required style="margin-top:16px">
         <textarea id="message" placeholder="Your Requirement" required></textarea>
-        <button type="submit" class="btn primary">Send on WhatsApp</button>
+        <button class="btn primary" style="margin-top:20px;width:100%">Send on WhatsApp</button>
       </form>
     </div>
 
-</footer>
+    <div class="about-box">
+      <img src="ooo.jpg">
+      <h3 style="margin-top:20px">About Solvix</h3>
+      <p>Solvix is a branding & UI/UX focused digital studio.</p>
+      <ul>
+        <li>Branding & Identity</li>
+        <li>UI / UX Design</li>
+        <li>SEO-ready Websites</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 <!-- FOOTER -->
-<footer id="contact">
+<footer>
   <p><strong>Solvix</strong> — Branding & Digital Growth Studio</p>
   <p>📞 9300594567 · 📧 jadhav.h@gmail.com · Pune, India</p>
-  <p style="margin-top:12px;">© 2026 Solvix. All rights reserved.</p>
+</footer>
+
 <a class="whatsapp" href="https://wa.me/919300594567" target="_blank">💬</a>
+
 <script>
 function sendWhatsApp(e){
   e.preventDefault();
-
-  const name = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-
-  const text =
-    "New Website Inquiry%0A%0A" +
-    "Name: " + name + "%0A" +
-    "Phone: " + phone + "%0A" +
-    "Email: " + email + "%0A%0A" +
-    "Message:%0A" + message;
-
-  const url = "https://wa.me/919300594567?text=" + text;
-  window.open(url, "_blank");
+  const t =
+    "New Inquiry%0AName: "+name.value+
+    "%0APhone: "+phone.value+
+    "%0AEmail: "+email.value+
+    "%0AMessage: "+message.value;
+  window.open("https://wa.me/919300594567?text="+t,"_blank");
 }
 </script>
 
 </body>
 </html>
+
 
 
