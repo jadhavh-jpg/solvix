@@ -106,6 +106,69 @@ nav a{
 }
 .service h3{font-size:24px;font-weight:800}
 .service p{margin-top:12px;color:var(--muted)}
+/* ===== MOBILE RESPONSIVE FIX ===== */
+@media (max-width: 900px){
+
+  /* HERO */
+  .hero{
+    min-height:auto;
+    padding:120px 6% 60px;
+    grid-template-columns:1fr;      /* single column */
+    gap:40px;
+    text-align:center;
+  }
+
+  .hero h1{
+    font-size:42px;
+    line-height:1.15;
+  }
+
+  .hero p{
+    font-size:17px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero .cta{
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+
+  .hero img{
+    max-width:100%;
+    height:auto;
+    margin:0 auto;
+  }
+
+  /* STATEMENT */
+  .statement{
+    padding:90px 6%;
+    font-size:34px;
+    text-align:center;
+    line-height:1.2;
+  }
+
+  /* SERVICES */
+  .services{
+    padding:90px 6%;
+    grid-template-columns:1fr;     /* single card per row */
+    gap:22px;
+  }
+
+  .service{
+    padding:30px;
+    border-radius:22px;
+  }
+
+  .service h3{
+    font-size:20px;
+  }
+
+  .service p{
+    font-size:15px;
+  }
+}
 
 
 /* ===== CLIENTS ===== */
@@ -502,6 +565,7 @@ clients.forEach(c=>observer.observe(c));
 
 </body>
 </html>
+
 
 
 
