@@ -51,6 +51,10 @@ nav a{
    CLIENTS SECTION – FINAL FIX
    =============================== */
 
+/* ===============================
+   CLIENT SECTION – FINAL FIX
+   =============================== */
+
 .clients{
   padding:110px 8%;
   text-align:center;
@@ -67,62 +71,65 @@ nav a{
   color:var(--muted);
 }
 
-/* DESKTOP GRID */
-.client-track{
+/* ===== DESKTOP VIEW ===== */
+.client-marquee{
   margin-top:60px;
+}
+
+.client-track{
   display:grid;
   grid-template-columns:repeat(5,1fr);
-  gap:60px;
+  gap:70px;
   align-items:center;
   justify-items:center;
 }
 
-/* LOGO */
 .client img{
-  width:160px;
+  width:170px;
   max-height:80px;
   object-fit:contain;
-  opacity:0;
-  transform:translateY(30px);
-  animation:fadeUp .8s ease forwards;
 }
 
-/* STAGGER EFFECT */
-.client:nth-child(1) img{animation-delay:.1s}
-.client:nth-child(2) img{animation-delay:.2s}
-.client:nth-child(3) img{animation-delay:.3s}
-.client:nth-child(4) img{animation-delay:.4s}
-.client:nth-child(5) img{animation-delay:.5s}
-
-@keyframes fadeUp{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+/* ❌ DESKTOP PAR DUPLICATE HIDE */
+.client.dup{
+  display:none;
 }
 
 /* ===============================
-   MOBILE – HORIZONTAL SCROLL
+   MOBILE – SMOOTH MARQUEE
    =============================== */
 @media(max-width:900px){
+
+  .client-marquee{
+    overflow:hidden;
+  }
+
   .client-track{
     display:flex;
     gap:40px;
-    animation:scrollLogos 18s linear infinite;
+    width:max-content;
+    animation:logoScroll 6s linear infinite;
+  }
+
+  /* ✅ MOBILE PAR DUPLICATE SHOW */
+  .client.dup{
+    display:flex;
   }
 
   .client img{
     width:140px;
-    opacity:1;
-    transform:none;
-    animation:none;
   }
 
-  @keyframes scrollLogos{
-    0%{transform:translateX(0)}
-    100%{transform:translateX(-50%)}
+  @keyframes logoScroll{
+    from{
+      transform:translateX(0);
+    }
+    to{
+      transform:translateX(-50%);
+    }
   }
 }
+
 
 
 /* ===== CONTACT + ABOUT ===== */
@@ -241,14 +248,29 @@ footer p{color:var(--muted);font-size:14px}
   <h2>Our Clients</h2>
   <p>Brands who trust Solvix</p>
 
-  <div class="client-track">
-    <div class="client"><img src="client1.png" alt=""></div>
-    <div class="client"><img src="client2.png" alt=""></div>
-    <div class="client"><img src="client3.png" alt=""></div>
-    <div class="client"><img src="client4.png" alt=""></div>
-    <div class="client"><img src="client5.png" alt=""></div>
+  <section class="clients">
+  <h2>Our Clients</h2>
+  <p>Brands who trust Solvix</p>
+
+  <div class="client-marquee">
+    <div class="client-track">
+      <!-- ORIGINAL LOGOS -->
+      <div class="client"><img src="client1.png" alt="Client 1"></div>
+      <div class="client"><img src="client2.png" alt="Client 2"></div>
+      <div class="client"><img src="client3.png" alt="Client 3"></div>
+      <div class="client"><img src="client4.png" alt="Client 4"></div>
+      <div class="client"><img src="client5.png" alt="Client 5"></div>
+
+      <!-- DUPLICATE (ONLY FOR MOBILE ANIMATION) -->
+      <div class="client dup"><img src="client1.png"></div>
+      <div class="client dup"><img src="client2.png"></div>
+      <div class="client dup"><img src="client3.png"></div>
+      <div class="client dup"><img src="client4.png"></div>
+      <div class="client dup"><img src="client5.png"></div>
+    </div>
   </div>
 </section>
+
 
 
 <section class="contact-about" id="contact">
@@ -312,6 +334,7 @@ clients.forEach(c=>observer.observe(c));
 
 </body>
 </html>
+
 
 
 
