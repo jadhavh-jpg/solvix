@@ -326,6 +326,35 @@ textarea{
 .bn39:hover .bn39span {
   background: transparent;
 }
+  .client{
+  background:#fff;
+  padding:30px;
+  border-radius:18px;
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.3s ease;
+}
+.client img{
+  max-width:140px;
+  max-height:60px;
+  object-fit:contain;
+  filter:grayscale(100%);
+  opacity:.75;
+  transition:.3s ease;
+}
+
+.client:hover img{
+  filter:grayscale(0%);
+  opacity:1;
+}
+@media(max-width:600px){
+  .client img{
+    max-width:110px;
+  }
+}
+
 
 </style>
   
@@ -396,14 +425,45 @@ textarea{
   <h2>Our Clients</h2>
   <p>Brands who trust Solvix</p>
 
+ <div class="client-grid">
+ <p style="margin-top:40px;color:#64748b;font-size:15px">
+    Trusted by growing brands across India
+  </p>
+<section class="clients">
+
+  <h2>Our Clients</h2>
+  <p>Brands who trust Solvix</p>
+
   <div class="client-grid">
-    <div class="client">Client One</div>
-    <div class="client">Client Two</div>
-    <div class="client">Client Three</div>
-    <div class="client">Client Four</div>
-    <div class="client">Client Five</div>
+
+    <div class="client">
+      <img src="images/clients/client1.png" alt="Client One – Branding by Solvix">
+    </div>
+
+    <div class="client">
+      <img src="images/clients/client2.png" alt="Client Two – Branding by Solvix">
+    </div>
+
+    <div class="client">
+      <img src="images/clients/client3.png" alt="Client Three – Branding by Solvix">
+    </div>
+
+    <div class="client">
+      <img src="images/clients/client4.png" alt="Client Four – Branding by Solvix">
+    </div>
+
+    <div class="client">
+      <img src="images/clients/client5.png" alt="Client Five – Branding by Solvix">
+    </div>
+
   </div>
+
+  <p style="margin-top:40px;color:#64748b;font-size:15px">
+    Trusted by growing brands across India
+  </p>
+
 </section>
+
 
 <!-- PROCESS -->
 <section class="process">
@@ -493,6 +553,7 @@ function sendWhatsApp(e){
 
 </body>
 </html>
+
 
 
 
