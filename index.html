@@ -21,26 +21,66 @@
 body{background:var(--bg);color:var(--text)}
 
 /* ===== NAV ===== */
+/* ===== NAV (DESKTOP + MOBILE READY) ===== */
 nav{
   position:sticky;
   top:0;
   z-index:999;
-  padding:20px 8%;
+  padding:18px 8%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(251,250,247,.95);
+  background:rgba(251,250,247,.96);
+  backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border);
+  transition:all .3s ease;
 }
+
+/* LOGO */
 nav img{
-  height:64px;   /* LOGO BIG */
+  height:64px;
+  transition:all .3s ease;
 }
+
+/* LINKS */
 nav a{
   margin-left:24px;
   text-decoration:none;
   font-weight:600;
   color:var(--text);
 }
+
+/* ===== MOBILE NAV ===== */
+@media(max-width:900px){
+
+  nav{
+    flex-direction:column;
+    align-items:center;
+    padding:12px 6% 10px;
+  }
+
+  nav img{
+    height:72px;          /* MOBILE ME BADA LOGO */
+    margin-bottom:6px;
+  }
+
+  nav > div{
+    display:none;         /* hide links initially */
+    flex-direction:column;
+    gap:14px;
+    margin-top:10px;
+    text-align:center;
+  }
+
+  nav.open > div{
+    display:flex;         /* hamburger click pe open */
+  }
+
+  nav a{
+    margin:0;
+    font-size:16px;
+  }
+
   /* ===== HERO ===== */
 .hero{
   min-height:100vh;
@@ -418,6 +458,12 @@ footer p{color:var(--muted);font-size:14px}
 .contact-form h2{
   letter-spacing:-0.5px;
 }
+  <script>
+function toggleMenu(){
+  document.querySelector('nav').classList.toggle('open');
+}
+</script>
+
 
 </style>
 </head>
@@ -565,6 +611,7 @@ clients.forEach(c=>observer.observe(c));
 
 </body>
 </html>
+
 
 
 
