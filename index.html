@@ -44,7 +44,7 @@ nav a{
   /* ===== HERO ===== */
 .hero{
   min-height:100vh;
-  padding:36px 4% 40px;
+  padding:120px 8% 80px;
   display:grid;
   grid-template-columns:1.1fr .9fr;
   gap:60px;
@@ -418,6 +418,61 @@ footer p{color:var(--muted);font-size:14px}
 .contact-form h2{
   letter-spacing:-0.5px;
 }
+  /* ===== CLIENTS DESKTOP FIX ===== */
+.client-marquee{
+  margin-top:60px;
+  overflow:visible;
+}
+
+.client-track{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:60px;
+  align-items:center;
+  justify-items:center;
+  animation:none;
+  width:100%;
+}
+
+.client{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.client img{
+  width:180px;       /* balanced desktop size */
+  max-height:90px;
+  object-fit:contain;
+}
+
+/* desktop me duplicate hide */
+.client.dup{
+  display:none;
+}
+@media(max-width:900px){
+
+  .client-marquee{
+    overflow:hidden;
+  }
+
+  .client-track{
+    display:flex;
+    gap:32px;
+    width:max-content;
+    animation:logoScroll 6s linear infinite; /* faster */
+  }
+
+  .client img{
+    width:130px;
+  }
+
+  @keyframes logoScroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+}
+
 
 </style>
 </head>
@@ -565,6 +620,7 @@ clients.forEach(c=>observer.observe(c));
 
 </body>
 </html>
+
 
 
 
