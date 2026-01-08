@@ -91,6 +91,22 @@ nav a{
   line-height:1.1;
 }
 .statement span{color:var(--accent)}
+  /* ===== SERVICES ===== */
+.services{
+  padding:120px 8%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.service{
+  background:var(--panel);
+  padding:40px;
+  border-radius:26px;
+  border:1px solid var(--border);
+}
+.service h3{font-size:24px;font-weight:800}
+.service p{margin-top:12px;color:var(--muted)}
+
 
 /* ===== CLIENTS ===== */
 /* ===============================
@@ -373,6 +389,32 @@ footer p{color:var(--muted);font-size:14px}
 
   <img src="fl.jpg" alt="Branding UI UX">
 </section>
+  <!-- STATEMENT -->
+<section class="statement">
+  Clean design.<br>
+  Clear thinking.<br>
+  <span>Serious growth.</span>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="service">
+    <h3>Brand Identity</h3>
+    <p>Logos, color systems and brand guidelines.</p>
+  </div>
+  <div class="service">
+    <h3>UI / UX Design</h3>
+    <p>Human-centered interfaces with clarity.</p>
+  </div>
+  <div class="service">
+    <h3>Web Experience</h3>
+    <p>Fast, SEO-ready and scalable websites.</p>
+  </div>
+  <div class="service">
+    <h3>Digital Growth</h3>
+    <p>SEO, marketing and performance strategy.</p>
+  </div>
+</section>
 
   <section class="clients">
   <h2>Our Clients</h2>
@@ -460,6 +502,7 @@ clients.forEach(c=>observer.observe(c));
 
 </body>
 </html>
+
 
 
 
