@@ -9,8 +9,8 @@
 
 <style>
 :root{
-  --bg:#f2f2f0;        /* cream */
-  --panel:#FFFFFF;
+  --bg:#FBFAF7;
+  --panel:#ffffff;
   --text:#1e293b;
   --muted:#64748b;
   --accent:#4f46e5;
@@ -18,232 +18,60 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
-body{background:var(--bg);color:var(--text);overflow-x:hidden}
+body{background:var(--bg);color:var(--text)}
 
 /* ===== NAV ===== */
 nav{
-  position:fixed;
-  top:0;left:0;right:0;
-  padding:18px 8%;
+  position:sticky;
+  top:0;
+  z-index:999;
+  padding:20px 8%;
   display:flex;
   justify-content:space-between;
   align-items:center;
   background:rgba(251,250,247,.95);
-  backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border);
-  z-index:999;
 }
 nav img{
-  height:52px;        /* logo size bada */
-  width:auto;
-  object-fit:contain;
+  height:64px;   /* LOGO BIG */
 }
-
 nav a{
-  margin-left:28px;
+  margin-left:24px;
   text-decoration:none;
-  font-weight:700;
+  font-weight:600;
   color:var(--text);
 }
 
-/* ===== HERO ===== */
-.hero{
-  min-height:100vh;
-  padding:140px 8% 80px;
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:60px;
-  align-items:center;
-}
-.hero h1{
-  font-size:66px;
-  font-weight:900;
-  line-height:1.05;
-}
-.hero h1 span{color:var(--accent)}
-.hero p{
-  margin-top:22px;
-  font-size:20px;
-  color:var(--muted);
-  max-width:520px;
-}
-.hero .cta{
-  margin-top:38px;
-  display:flex;
-  gap:20px;
-}
-.btn{
-  padding:16px 34px;
-  border-radius:999px;
-  font-weight:800;
-  text-decoration:none;
-}
-.btn.primary{background:var(--accent);color:#fff}
-.btn.outline{
-  border:2px solid var(--accent);
-  color:var(--accent);
-}
-.hero img{
-  width:100%;
-  max-width:520px;
-}
-
-/* ===== STATEMENT ===== */
-.statement{
-  padding:140px 8%;
-  font-size:56px;
-  font-weight:900;
-  line-height:1.1;
-}
-.statement span{color:var(--accent)}
-
-/* ===== SERVICES ===== */
-.services{
-  padding:120px 8%;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-}
-.service{
-  background:var(--panel);
-  padding:40px;
-  border-radius:26px;
-  border:1px solid var(--border);
-}
-.service h3{font-size:24px;font-weight:800}
-.service p{margin-top:12px;color:var(--muted)}
-
-/* ===== OUR CLIENTS ===== */
+/* ===== CLIENTS ===== */
 .clients{
-  padding:120px 8%;
+  padding:100px 8%;
   text-align:center;
 }
-
 .client-grid{
-  margin-top:60px;
+  margin-top:50px;
   display:grid;
   grid-template-columns:repeat(5,1fr);
-  gap:40px;
+  gap:30px;
   justify-items:center;
 }
-
 .client{
   background:#fff;
   padding:26px;
   border-radius:18px;
   border:1px solid var(--border);
+  width:100%;
+  max-width:180px;
   display:flex;
   align-items:center;
   justify-content:center;
-  width:100%;
-  max-width:200px;
 }
-
 .client img{
   max-width:140px;
   max-height:60px;
   object-fit:contain;
-  filter:grayscale(100%);
-  opacity:.75;
-  transition:.3s ease;
 }
 
-.client:hover img{
-  filter:none;
-  opacity:1;
-  transform:scale(1.05);
-}
-@media(max-width:900px){
-  .client-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-
-/* ===== PROCESS ===== */
-.process{
-  padding:140px 8%;
-}
-.step{
-  display:flex;
-  gap:40px;
-  margin-bottom:120px;
-}
-.step-number{
-  font-size:72px;
-  font-weight:900;
-  color:#e2e8f0;
-}
-.step h3{
-  font-size:38px;
-  font-weight:900;
-}
-.step p{
-  margin-top:10px;
-  max-width:480px;
-  color:var(--muted);
-}
-
-/* ===== CTA ===== */
-.final-cta{
-  padding:140px 8%;
-  text-align:center;
-  background:#ffffff;
-  border-top:1px solid var(--border);
-}
-.final-cta h2{
-  font-size:54px;
-  font-weight:900;
-}
-.final-cta p{
-  margin-top:14px;
-  color:var(--muted);
-}
-.final-cta a{
-  display:inline-block;
-  margin-top:36px;
-}
-
-/* ===== FOOTER (SINGLE LIGHT) ===== */
-footer{
-  background:#FBFAF7;
-  border-top:1px solid var(--border);
-  padding:60px 8% 30px;
-  text-align:center;
-}
-footer p{
-  font-size:14px;
-  color:var(--muted);
-}
-footer strong{color:var(--text)}
-
-/* ===== WHATSAPP ===== */
-.whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  background:#25D366;
-  color:#fff;
-  width:54px;
-  height:54px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-  text-decoration:none;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
-}
-
-/* ===== MOBILE ===== */
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr;text-align:center}
-  .hero h1{font-size:44px}
-  .statement{font-size:36px}
-  .step{flex-direction:column}
-  .hero .cta{justify-content:center}
-}
-  /* ===== CONTACT + ABOUT ===== */
+/* ===== CONTACT + ABOUT ===== */
 .contact-about{
   padding:120px 8%;
 }
@@ -253,135 +81,98 @@ footer strong{color:var(--text)}
   gap:40px;
 }
 
-.contact-form-box,
-.about-box{
+/* CONTACT */
+.contact-form{
   background:#fff;
   padding:40px;
   border-radius:26px;
   border:1px solid var(--border);
 }
-
-/* FORM */
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
-input,textarea{
+.contact-form h2{font-size:36px;font-weight:900}
+.contact-form form{margin-top:28px}
+.contact-form input,
+.contact-form textarea{
   width:100%;
-  padding:14px;
+  padding:14px 16px;
   border-radius:12px;
   border:1px solid var(--border);
+  margin-bottom:14px;
 }
-textarea{
-  margin-top:16px;
-  min-height:120px;
-  resize:none;
-}
-.contact-form-box button{
-  margin-top:20px;
+.contact-form textarea{min-height:120px}
+.contact-form button{
   width:100%;
+  padding:16px;
+  border-radius:999px;
+  border:none;
+  background:var(--accent);
+  color:#fff;
+  font-weight:800;
+  font-size:16px;
 }
 
 /* ABOUT */
-.about-box img{
+.about{
+  background:#fff;
+  border-radius:26px;
+  border:1px solid var(--border);
+  overflow:hidden;
+}
+.about img{
   width:100%;
   height:220px;
   object-fit:cover;
-  border-radius:18px;
 }
-.about-box h3{
-  margin-top:20px;
-  font-size:28px;
-  font-weight:900;
+.about-content{
+  padding:34px;
 }
-.about-box p{
-  margin-top:10px;
-  color:var(--muted);
-}
-.about-box ul{
-  margin-top:14px;
-  padding-left:18px;
-}
-.about-box li{
-  margin-bottom:8px;
-}
-  @media(max-width:900px){
-  nav img{
-    height:42px;
-  }
-}
-  .bn39 {
-  background-image: linear-gradient(135deg, #008aff, #86d472);
-  border-radius: 6px;
-  box-sizing: border-box;
-  color: #ffffff;
-  display: block;
-  height: 50px;
-  font-size: 1.4em;
-  font-weight: 600;
-  padding: 4px;
-  position: relative;
-  text-decoration: none;
-  width: 7em;
-  z-index: 2;
-}
+.about-content h3{font-size:28px;font-weight:900}
+.about-content p{margin-top:10px;color:var(--muted)}
+.about-content ul{margin-top:14px;padding-left:18px}
+.about-content li{margin-bottom:8px}
 
-.bn39:hover {
-  color: #fff;
+/* ===== FOOTER ===== */
+footer{
+  padding:50px 8%;
+  text-align:center;
+  border-top:1px solid var(--border);
 }
+footer p{color:var(--muted);font-size:14px}
 
-.bn39 .bn39span {
-  align-items: center;
-  background: #0e0e10;
-  border-radius: 6px;
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  transition: background 0.5s ease;
-  width: 100%;
-}
-
-.bn39:hover .bn39span {
-  background: transparent;
-}
-  .client{
-  background:#fff;
-  padding:30px;
-  border-radius:18px;
-  border:1px solid var(--border);
+/* ===== WHATSAPP FLOAT ===== */
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:54px;
+  height:54px;
+  background:#25D366;
+  border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  transition:.3s ease;
-}
-.client img{
-  max-width:140px;
-  max-height:60px;
-  object-fit:contain;
-  filter:grayscale(100%);
-  opacity:.75;
-  transition:.3s ease;
+  color:#fff;
+  font-size:22px;
+  text-decoration:none;
 }
 
-.client:hover img{
-  filter:grayscale(0%);
-  opacity:1;
-}
-@media(max-width:600px){
-  .client img{
-    max-width:110px;
+/* ===== MOBILE FIX ===== */
+@media(max-width:900px){
+  nav{padding:14px 6%}
+  nav img{height:52px}
+
+  .client-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .contact-wrap{
+    grid-template-columns:1fr; /* CONTACT UP, ABOUT DOWN */
   }
 }
-
-
 </style>
-  
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
   <img src="logo.png" alt="Solvix">
   <div>
@@ -392,150 +183,52 @@ textarea{
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div>
-    <h1>
-      Branding & <span>UI/UX</span><br>
-      That Makes Brands Matter
-    </h1>
-    <p>
-      We craft clean, premium digital identities and experiences
-      that people trust, remember and choose.
-    </p>
-    <div class="cta">
-      <a href="#" class="btn primary">Start a Project</a>
-      <a href="#" class="btn outline">View Work</a>
-    </div>
-  </div>
-
-  <img src="fl.jpg" alt="Branding UI UX">
-</section>
-
-<!-- STATEMENT -->
-<section class="statement">
-  Clean design.<br>
-  Clear thinking.<br>
-  <span>Serious growth.</span>
-</section>
-
-<!-- SERVICES -->
-<section class="services">
-  <div class="service">
-    <h3>Brand Identity</h3>
-    <p>Logos, color systems and brand guidelines.</p>
-  </div>
-  <div class="service">
-    <h3>UI / UX Design</h3>
-    <p>Human-centered interfaces with clarity.</p>
-  </div>
-  <div class="service">
-    <h3>Web Experience</h3>
-    <p>Fast, SEO-ready and scalable websites.</p>
-  </div>
-  <div class="service">
-    <h3>Digital Growth</h3>
-    <p>SEO, marketing and performance strategy.</p>
-  </div>
-</section>
-
+<section class="clients">
   <h2>Our Clients</h2>
-  <p>Brands who trust Solvix</p>
+  <p style="color:var(--muted)">Brands who trust Solvix</p>
 
   <div class="client-grid">
-
-  <div class="client">
-    <img src="client1.png" alt="Client One – Branding by Solvix">
-  </div>
-
-  <div class="client">
-    <img src="client2.png" alt="Client Two – Branding by Solvix">
-  </div>
-
-  <div class="client">
-    <img src="client3.png" alt="Client Three – Branding by Solvix">
-  </div>
-
-  <div class="client">
-    <img src="client4.png" alt="Client Four – Branding by Solvix">
-  </div>
-
-  <div class="client">
-    <img src="client5.png" alt="Client Five – Branding by Solvix">
-  </div>
-</div>
-</section>
-</div>
-<!-- PROCESS -->
-<section class="process">
-  <div class="step">
-    <div class="step-number">01</div>
-    <div>
-      <h3>Understand</h3>
-      <p>Your brand, market and users deeply.</p>
-    </div>
-  </div>
-
-  <div class="step">
-    <div class="step-number">02</div>
-    <div>
-      <h3>Design</h3>
-      <p>Visual systems and UX that feel right.</p>
-    </div>
-  </div>
-
-  <div class="step">
-    <div class="step-number">03</div>
-    <div>
-      <h3>Grow</h3>
-      <p>Launch, optimize and scale with intent.</p>
-    </div>
+    <div class="client"><img src="client1.png"></div>
+    <div class="client"><img src="client2.png"></div>
+    <div class="client"><img src="client3.png"></div>
+    <div class="client"><img src="client4.png"></div>
+    <div class="client"><img src="client5.png"></div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="final-cta">
-  <h2>Let’s Build Something Meaningful</h2>
-  <p>Ready when you are.</p>
-  <a class="bn39" href="/"><span class="bn39span">join us</span></a>
-</section>
-</section>
-
-<!-- CONTACT + ABOUT -->
 <section class="contact-about" id="contact">
   <div class="contact-wrap">
 
-    <div class="contact-form-box">
+    <div class="contact-form">
       <h2>Contact Us</h2>
       <form onsubmit="sendWhatsApp(event)">
-        <div class="form-grid">
-          <input id="name" placeholder="Your Name" required>
-          <input id="phone" placeholder="Phone Number" required>
-        </div>
-        <input id="email" placeholder="Email Address" required style="margin-top:16px">
+        <input id="name" placeholder="Your Name" required>
+        <input id="phone" placeholder="Phone Number" required>
+        <input id="email" placeholder="Email Address" required>
         <textarea id="message" placeholder="Your Requirement" required></textarea>
-        <button class="btn primary" style="margin-top:20px;width:100%">Send on WhatsApp</button>
+        <button type="submit">Send on WhatsApp</button>
       </form>
     </div>
 
-    <div class="about-box">
+    <div class="about">
       <img src="about.png">
-      <h3 style="margin-top:20px">About Solvix</h3>
-      <p>Solvix is a branding & UI/UX focused digital studio.</p>
-      <ul>
-        <li>Branding & Identity</li>
-        <li>UI / UX Design</li>
-        <li>SEO-ready Websites</li>
-      </ul>
+      <div class="about-content">
+        <h3>About Solvix</h3>
+        <p>Solvix is a branding & UI/UX focused digital studio.</p>
+        <ul>
+          <li>Brand Identity</li>
+          <li>UI / UX Design</li>
+          <li>SEO-ready Websites</li>
+        </ul>
+      </div>
     </div>
 
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p><strong>Solvix</strong> — Branding & Digital Growth Studio</p>
-  <p>📞 9300594567 · 📧 jadhav.h@gmail.com · Pune, India</p>
+  <p>📞 9300594567 · 📧 jadhav.h@gmail.com</p>
 </footer>
 
 <a class="whatsapp" href="https://wa.me/919300594567" target="_blank">💬</a>
@@ -543,32 +236,11 @@ textarea{
 <script>
 function sendWhatsApp(e){
   e.preventDefault();
-  const t =
-    "New Inquiry%0AName: "+name.value+
-    "%0APhone: "+phone.value+
-    "%0AEmail: "+email.value+
-    "%0AMessage: "+message.value;
-  window.open("https://wa.me/919300594567?text="+t,"_blank");
+  const n=name.value,p=phone.value,eid=email.value,m=message.value;
+  const text=`Name: ${n}%0APhone: ${p}%0AEmail: ${eid}%0ARequirement: ${m}`;
+  window.open(`https://wa.me/919300594567?text=${text}`,'_blank');
 }
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
