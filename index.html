@@ -43,33 +43,69 @@ nav a{
 }
 
 /* ===== CLIENTS ===== */
+/* ===============================
+   CLIENT LOGO SECTION (NO CARDS)
+   =============================== */
+
 .clients{
   padding:100px 8%;
   text-align:center;
 }
+
+.clients h2{
+  font-size:36px;
+  font-weight:900;
+}
+
+.clients p{
+  margin-top:8px;
+  color:var(--muted);
+}
+
+/* LOGO GRID */
 .client-grid{
   margin-top:50px;
   display:grid;
   grid-template-columns:repeat(5,1fr);
-  gap:30px;
-  justify-items:center;
+  gap:40px;
+  align-items:center;
 }
+
+/* SINGLE LOGO WRAPPER (NO CARD) */
 .client{
-  background:#fff;
-  padding:26px;
-  border-radius:18px;
-  border:1px solid var(--border);
-  width:100%;
-  max-width:180px;
+  background:none;
+  border:none;
+  padding:0;
   display:flex;
   align-items:center;
   justify-content:center;
 }
+
+/* LOGO IMAGE STYLE */
 .client img{
   max-width:140px;
-  max-height:60px;
+  max-height:70px;
   object-fit:contain;
+  opacity:.85;
+  filter:grayscale(100%);
+  transition:all .35s ease;
 }
+
+/* HOVER EFFECT */
+.client img:hover{
+  opacity:1;
+  filter:grayscale(0%);
+  transform:scale(1.06);
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:900px){
+  .client-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+  }
+}
+
 
 /* ===== CONTACT + ABOUT ===== */
 .contact-about{
@@ -188,12 +224,13 @@ footer p{color:var(--muted);font-size:14px}
   <p style="color:var(--muted)">Brands who trust Solvix</p>
 
   <div class="client-grid">
-    <div class="client"><img src="client1.png"></div>
-    <div class="client"><img src="client2.png"></div>
-    <div class="client"><img src="client3.png"></div>
-    <div class="client"><img src="client4.png"></div>
-    <div class="client"><img src="client5.png"></div>
-  </div>
+  <div class="client"><img src="client1.png"></div>
+  <div class="client"><img src="client2.png"></div>
+  <div class="client"><img src="client3.png"></div>
+  <div class="client"><img src="client4.png"></div>
+  <div class="client"><img src="client5.png"></div>
+</div>
+
 </section>
 
 <section class="contact-about" id="contact">
@@ -244,3 +281,4 @@ function sendWhatsApp(e){
 
 </body>
 </html>
+
