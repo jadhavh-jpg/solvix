@@ -33,7 +33,12 @@ nav{
   border-bottom:1px solid var(--border);
   z-index:999;
 }
-nav img{height:34px}
+nav img{
+  height:52px;        /* logo size bada */
+  width:auto;
+  object-fit:contain;
+}
+
 nav a{
   margin-left:28px;
   text-decoration:none;
@@ -282,14 +287,21 @@ textarea{
 .about-box li{
   margin-bottom:8px;
 }
+  @media(max-width:900px){
+  nav img{
+    height:42px;
+  }
+}
+
 </style>
+  
 </head>
 
 <body>
 
 <!-- NAV -->
 <nav>
-  <img src="solvixl.png" alt="Solvix">
+  <img src="logo.png" alt="Solvix">
   <div>
     <a href="#">Home</a>
     <a href="#">Services</a>
@@ -447,6 +459,7 @@ function sendWhatsApp(e){
 
 </body>
 </html>
+
 
 
 
