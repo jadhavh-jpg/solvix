@@ -282,6 +282,27 @@ clients.forEach(c=>observer.observe(c));
     max-width:110px;
   }
 }
+  .logo img{
+  height:42px;          /* perfect header size */
+  width:auto;
+  display:block;
+}
+@media(max-width:600px){
+  .logo img{
+    height:34px;
+  }
+}
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Solvix",
+  "url": "https://solvix-gamma.vercel.app",
+  "logo": "https://solvix-gamma.vercel.app/logodp.jpg"
+}
+</script>
+
+
 
 
 </style>
@@ -291,7 +312,10 @@ clients.forEach(c=>observer.observe(c));
 
 <header>
   <div class="container nav">
-    <div class="logo">Solvix</div>
+    <div class="logo">
+  <img src="logodp.jpg" alt="Solvix Logo">
+</div>
+
     <nav>
       <a href="#home">Home</a>
       <a href="#services">Services</a>
@@ -303,6 +327,10 @@ clients.forEach(c=>observer.observe(c));
 </header>
 
 <!-- HERO -->
+  <link rel="icon" type="image/jpeg" href="logodp.jpg">
+<link rel="apple-touch-icon" href="logodp.jpg">
+<meta property="og:image" content="https://solvix-gamma.vercel.app/logodp.jpg">
+
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div>
@@ -494,4 +522,5 @@ clients.forEach(c=>observer.observe(c));
 
 </body>
 </html>
+
 
