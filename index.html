@@ -301,6 +301,17 @@ clients.forEach(c=>observer.observe(c));
   "logo": "https://solvix-gamma.vercel.app/logodp.jpg"
 }
 </script>
+  .logo img{
+  height:60px;      /* 🔥 pehle ~42px tha */
+  width:auto;
+  display:block;
+}
+@media(max-width:600px){
+  .logo img{
+    height:44px;
+  }
+}
+
 
 
 
@@ -522,6 +533,7 @@ clients.forEach(c=>observer.observe(c));
 
 </body>
 </html>
+
 
 
 
