@@ -467,8 +467,44 @@ clients.forEach(c=>observer.observe(c));
   width: 100px;
   height: auto;
 }
+  .whatsapp-wrap {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+/* Avatar image */
+.whatsapp-avatar {
+  width: 70px;
+  margin-bottom: -10px;
+  animation: floatAvatar 3s ease-in-out infinite;
+}
 
+/* WhatsApp bubble */
+.whatsapp-btn {
+  width: 55px;
+  height: 55px;
+  background: #25D366;
+  color: #fff;
+  font-size: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Floating animation */
+@keyframes floatAvatar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
 
 </style>
 </head>
@@ -760,10 +796,23 @@ clients.forEach(c=>observer.observe(c));
 
 
 <!-- WHATSAPP -->
-<a href="https://wa.me/919300594567" class="whatsapp">💬</a>
+<!-- WhatsApp + Avatar -->
+<div class="whatsapp-wrap">
+
+  <!-- Avatar (Image 2) -->
+  <img src="GGG.png" alt="Solvix Expert" class="whatsapp-avatar">
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/919300594567" target="_blank" class="whatsapp-btn">
+    💬
+  </a>
+
+</div>
+
 
 </body>
 </html>
+
 
 
 
