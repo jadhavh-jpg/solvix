@@ -447,6 +447,27 @@ clients.forEach(c=>observer.observe(c));
   width: 160px;
   margin-bottom: 15px;
 }
+  .anim {
+  display: flex;
+  gap: 20px;
+}
+
+.hero-card {
+  width: 120px;
+  height: 160px;
+  background: #fff;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.hero-card img {
+  width: 100px;
+  height: auto;
+}
+
 
 
 </style>
@@ -483,9 +504,25 @@ clients.forEach(c=>observer.observe(c));
       <a href="#pricing" class="btn btn-main">Get Started</a>
       <a href="#services" class="btn btn-outline">View Services</a>
     </div>
-    <div class="anim">
-      <div></div><div></div><div></div>
-    </div>
+   <div class="anim">
+
+  <!-- Card 1 : NEED -->
+  <div class="hero-card">
+    <img src="need.png" alt="Need a Website">
+  </div>
+
+  <!-- Card 2 : WEBSITE -->
+  <div class="hero-card">
+    <img src="website.png" alt="Website Solution">
+  </div>
+
+  <!-- Card 3 : QUESTION / CONFUSION -->
+  <div class="hero-card">
+    <img src="question.png" alt="Need Guidance">
+  </div>
+
+</div>
+
   </div>
 </section>
 <section class="services">
@@ -727,6 +764,7 @@ clients.forEach(c=>observer.observe(c));
 
 </body>
 </html>
+
 
 
 
