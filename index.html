@@ -310,8 +310,139 @@ clients.forEach(c=>observer.observe(c));
     height:44px;
   }
 }
+  .services {
+  padding: 80px 20px;
+  background: #f7f9fc;
+}
 
+.services-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
 
+.service-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 30px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.service-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #2c2c2c;
+}
+
+.service-card p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #ff8a00;
+  color: #fff;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background .3s ease;
+}
+
+.btn:hover {
+  background: #e67600;
+}
+  .footer {
+  background: linear-gradient(135deg, #1f2a7c, #3546b3);
+  color: #fff;
+  padding: 70px 20px 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.footer-box h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.footer-box h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.footer-box p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #dcdfff;
+}
+
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-box ul li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.footer-box ul li a {
+  text-decoration: none;
+  color: #dcdfff;
+  transition: color 0.3s;
+}
+
+.footer-box ul li a:hover {
+  color: #ff9800;
+}
+
+.footer-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 28px;
+  background: #ff8a00;
+  color: #fff;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-btn:hover {
+  background: #e67600;
+}
+
+.footer-bottom {
+  margin-top: 50px;
+  padding: 20px;
+  text-align: center;
+  background: rgba(0,0,0,0.15);
+  font-size: 14px;
+}
 
 
 
@@ -352,6 +483,32 @@ clients.forEach(c=>observer.observe(c));
     <div class="anim">
       <div></div><div></div><div></div>
     </div>
+  </div>
+</section>
+<section class="services">
+  <div class="services-container">
+
+    <div class="service-card">
+      <img src="images/web-dev.png" alt="Website Development">
+      <h3>Website Development</h3>
+      <p>Custom, responsive websites</p>
+      <a href="#" class="btn">Learn More</a>
+    </div>
+
+    <div class="service-card">
+      <img src="images/graphic-design.png" alt="Graphic Design">
+      <h3>Graphic Design</h3>
+      <p>Logos, posters, social media</p>
+      <a href="#" class="btn">Learn More</a>
+    </div>
+
+    <div class="service-card">
+      <img src="images/motion-video.png" alt="Motion Videos">
+      <h3>Motion Videos</h3>
+      <p>Promotional & explainer videos</p>
+      <a href="#" class="btn">Learn More</a>
+    </div>
+
   </div>
 </section>
 
@@ -525,6 +682,58 @@ clients.forEach(c=>observer.observe(c));
     </div>
   </div>
 </section>
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-box">
+      <h2>Solvix</h2>
+      <p>
+        We design professional websites, posters & motion videos
+        that help businesses grow digitally.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-box">
+      <h3>Our Services</h3>
+      <ul>
+        <li>Website Development</li>
+        <li>Graphic Design</li>
+        <li>Poster Design</li>
+        <li>Motion Videos</li>
+        <li>Digital Branding</li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-box">
+      <h3>Contact Us</h3>
+      <p>📍 Pune, Maharashtra</p>
+      <p>📧 solvix@gmail.com</p>
+      <p>📞 +91 9300594567</p>
+
+      <a href="#" class="footer-btn">Get Free Consultation</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Solvix. All Rights Reserved.
+  </div>
+</footer>
 
 
 <!-- WHATSAPP -->
@@ -532,6 +741,7 @@ clients.forEach(c=>observer.observe(c));
 
 </body>
 </html>
+
 
 
 
