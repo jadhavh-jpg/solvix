@@ -518,56 +518,108 @@ clients.forEach(c=>observer.observe(c));
   align-items: center;
 }
 
-/* Avatar image */
-.whatsapp-avatar {
-  width: 360px;
-  margin-bottom: -10px;
-  animation: floatAvatar 3s ease-in-out infinite;
-}
+<!-- WhatsApp + Avatar Container -->
+<div class="wa-container">
 
-/* WhatsApp bubble */
-<a href="https://wa.me/919300594567?text=Hello%20Solvix,%20mujhe%20website%20banwani%20hai"
-   class="whatsapp-btn" target="_blank">
+    <!-- Avatar (same file name use karo) -->
+    <img src="avatar.png" class="whatsapp-avatar">
 
-   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-   <span>Chat Now</span>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919300594567?text=Hello%20Solvix,%20mujhe%20website%20banwani%20hai"
+       class="whatsapp-btn" target="_blank">
 
-</a>
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+        <span>Get Website @ ₹999</span>
+
+    </a>
+
+</div>
 
 <style>
-.whatsapp-btn {
+
+/* 🔥 Container */
+.wa-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #25D366;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* 🧑 Avatar */
+.whatsapp-avatar {
+    width: 120px;
+    margin-bottom: -10px;
+    animation: floatAvatar 3s ease-in-out infinite;
+}
+
+/* 💬 Button */
+.whatsapp-btn {
+    background: linear-gradient(45deg, #25D366, #1ebe5d);
     color: white;
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 12px 18px;
     border-radius: 50px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    z-index: 999;
     text-decoration: none;
     animation: bounce 1.5s infinite;
 }
 
 .whatsapp-btn img {
-    width: 28px;
+    width: 26px;
 }
 
-/* Hover effect */
+/* 🔥 Hover */
 .whatsapp-btn:hover {
-    background: #1ebe5d;
+    transform: scale(1.05);
 }
 
-/* Bounce Animation */
+/* 🎯 Avatar Animation */
+@keyframes floatAvatar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* 🎯 Button Animation */
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    50% { transform: translateY(-6px); }
 }
+
+/* 📱 MOBILE (clean & small) */
+@media (max-width: 768px) {
+    .whatsapp-avatar {
+        width: 80px;
+    }
+
+    .whatsapp-btn {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+
+    .whatsapp-btn span {
+        display: none; /* sirf icon dikhega */
+    }
+}
+
+/* 💻 DESKTOP (bada & attractive) */
+@media (min-width: 768px) {
+    .whatsapp-avatar {
+        width: 160px;
+    }
+
+    .whatsapp-btn {
+        font-size: 17px;
+        padding: 14px 22px;
+    }
+}
+
 </style>
 </head>
 
