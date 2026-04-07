@@ -526,16 +526,47 @@ clients.forEach(c=>observer.observe(c));
 }
 
 /* WhatsApp bubble */
-<div class="wa-text">Chat with us</div>
-.wa-text {
+<a href="https://wa.me/919300594567?text=Hello%20Solvix,%20mujhe%20website%20banwani%20hai"
+   class="whatsapp-btn" target="_blank">
+
+   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+   <span>Chat Now</span>
+
+</a>
+
+<style>
+.whatsapp-btn {
     position: fixed;
-    bottom: 300px;
+    bottom: 20px;
     right: 20px;
-    background: white;
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 14px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    background: #25D366;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 999;
+    text-decoration: none;
+    animation: bounce 1.5s infinite;
+}
+
+.whatsapp-btn img {
+    width: 28px;
+}
+
+/* Hover effect */
+.whatsapp-btn:hover {
+    background: #1ebe5d;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
 </style>
 </head>
