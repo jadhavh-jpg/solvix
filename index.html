@@ -531,7 +531,7 @@ clients.forEach(c=>observer.observe(c));
 <style>
 .wa-text {
     position: fixed;
-    bottom: 80px;
+    bottom: 300px;
     right: 20px;
     background: white;
     padding: 8px 12px;
@@ -539,49 +539,6 @@ clients.forEach(c=>observer.observe(c));
     font-size: 14px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-</style>
-
-/* Floating animation */
-@keyframes floatAvatar {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
-}
-  .services {
-  text-align: center;
-  padding: 80px 20px;
-  background: #f8f9fc;
-}
-
-.services h2 {
-  font-size: 36px;
-  margin-bottom: 40px;
-}
-
-.service-container {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
-.service-card {
-  padding: 25px 30px;
-  background: white;
-  border-radius: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.service-card:hover {
-  background: linear-gradient(135deg, #4f46e5, #9333ea);
-  color: white;
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
 </style>
 </head>
 
