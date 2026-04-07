@@ -619,6 +619,31 @@ clients.forEach(c=>observer.observe(c));
         padding: 14px 22px;
     }
 }
+.cta-btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff6a00, #ffb347);
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Hover effect */
+.cta-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0% { box-shadow: 0 0 10px #ff6a00; }
+    100% { box-shadow: 0 0 20px #ffb347; }
+}
 
 </style>
 </head>
@@ -652,7 +677,12 @@ clients.forEach(c=>observer.observe(c));
       <h1>Grow Your Business with <span>Solvix</span></h1>
       <p>We build professional websites, posters & motion videos that help businesses grow digitally.</p>
       <a href="#pricing" class="btn btn-main">Get Started</a>
-      <a href="#services" class="btn btn-outline">View Services</a>
+     <a href="https://wa.me/919300594567?text=Hello%20Solvix,%20mujhe%20₹999%20wali%20website%20offer%20chahiye"
+   class="cta-btn" target="_blank">
+
+   🔥 Limited Offer – Website @ ₹999
+
+</a>
     </div>
    <div class="anim">
 
