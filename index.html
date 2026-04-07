@@ -526,19 +526,20 @@ clients.forEach(c=>observer.observe(c));
 }
 
 /* WhatsApp bubble */
-.whatsapp-btn {
-  width: 55px;
-  height: 55px;
-  background: #25D366;
-  color: #fff;
-  font-size: 26px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+<div class="wa-text">Chat with us</div>
+
+<style>
+.wa-text {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
+</style>
 
 /* Floating animation */
 @keyframes floatAvatar {
